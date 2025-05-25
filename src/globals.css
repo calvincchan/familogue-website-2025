@@ -1,0 +1,295 @@
+@import "tailwindcss" prefix(x);
+@source "../node_modules/nextra/**/*.{ts,tsx}";
+@plugin "@tailwindcss/typography";
+@import "../node_modules/nextra/styles/default.css";
+@import "../node_modules/nextra/styles/code-block.css";
+@import "../node_modules/nextra/styles/scrollbar.css";
+@import "../node_modules/nextra/styles/steps.css";
+@import "../node_modules/nextra/styles/cards.css";
+@import "../node_modules/nextra/styles/react-medium-image-zoom.css";
+
+.x-container {
+  @apply x:max-w-5xl x:mx-auto x:px-4 x:py-10;
+}
+
+.x-button {
+  @apply x:bg-primary-700 x:text-white x:hover:bg-black x:transition-colors x:rounded x:p-2 x:inline-flex x:no-underline! x:items-center x:gap-1;
+}
+
+.x-top-nav {
+  @apply x:px-2 x:py-5 x:flex x:items-center x:justify-between x:flex-col x:sm:flex-row;
+
+  .x-main-link {
+    @apply x:font-semibold x:hover:underline x:flex x:items-center x:my-4;
+  }
+
+  .x-main-link::before {
+    @apply x:inline-block x:mr-2 x:bg-stone-100 x:rounded-full;
+    content: url('/logo.svg');
+    width: 80px;
+    height: 80px;
+  }
+
+  .x-menu {
+    @apply x:flex x:flex-row x:list-none x:gap-4 x:m-0 x:items-center x:font-medium;
+  }
+
+  a {
+    @apply x:hover:underline x:my-4;
+  }
+}
+
+.x-top-page {
+  h1 {
+    @apply x:text-5xl x:font-semibold x:my-2;
+  }
+
+  h2 {
+    @apply x:text-3xl x:font-medium x:my-2;
+  }
+
+  h3 {
+    @apply x:text-xl x:my-1;
+  }
+
+  a {
+    @apply x:underline;
+  }
+
+  hr {
+    @apply x:my-10 x:border-stone-200 x:dark:border-stone-700;
+  }
+
+}
+
+.x-contact-page {
+  h2 {
+    @apply x:text-3xl x:font-medium x:my-2;
+  }
+
+  h3 {
+    @apply x:text-xl x:mt-6 x:flex x:items-center x:gap-2;
+  }
+
+  a {
+    @apply x:underline;
+  }
+
+  .social-icons {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.x-hero {
+  @apply x:my-8 x:sm:my-36;
+
+  h1 {
+    @apply x:text-primary-700;
+
+    .social-icons {
+      /* @apply x:inline-block x:mr-2; */
+      width: 100px;
+      height: 100px;
+    }
+  }
+
+  p {
+    @apply x:my-8 x:text-lg;
+  }
+}
+
+.x-page-header {
+  @apply x:sm:my-24;
+
+  h1 {
+    @apply x:text-5xl x:font-semibold x:my-2 x:text-primary-700;
+  }
+
+  h2 {
+    @apply x:text-xl x:my-2;
+  }
+
+  h3 {
+    @apply x:text-xl x:font-semibold x:mt-6;
+  }
+}
+
+.x-post-card {
+  @apply x:my-10;
+  @apply x:clear-both;
+  @apply x:border-l-2 x:border-l-primary-500 x:pl-2;
+
+  h3 {
+    @apply x:text-xl x:font-medium;
+  }
+
+  time {
+    @apply x:block x:text-sm x:text-gray-500;
+  }
+
+  section {
+    @apply x:my-36;
+  }
+
+  a {
+    @apply x:no-underline x:hover:underline;
+  }
+
+  .x-read-more-link {
+    @apply x:block x:mt-2 x:underline x:text-primary-700;
+  }
+}
+
+.x-project-list {
+  /* @apply x:flex x:flex-col x:sm:flex-row; */
+  @apply x:grid x:grid-cols-1 x:sm:grid-cols-2 x:gap-4;
+}
+
+.x-project-card {
+  @apply x:my-4;
+  @apply x:border x:rounded-xl x:overflow-clip x:border-stone-300;
+
+  .x-project-content {
+    @apply x:p-2;
+  }
+
+  h3 {
+    @apply x:text-2xl x:font-medium;
+  }
+
+  p {
+    @apply x:text-stone-500;
+  }
+
+  time {
+    @apply x:block x:text-sm x:text-gray-500;
+  }
+
+  section {
+    @apply x:my-36;
+  }
+
+  a {
+    @apply x:no-underline x:hover:underline;
+  }
+
+  .x-read-more-link {
+    @apply x:block x:mt-2 x:underline x:text-primary-700;
+  }
+}
+
+
+.x-blog-header {
+  @apply x:sm:my-10;
+
+  h1 {
+    @apply x:text-4xl x:font-medium x:my-2;
+  }
+
+  .x-meta-block {
+    @apply x:text-sm x:text-gray-500 x:dark:text-gray-400;
+  }
+}
+
+.x-bio {
+  @apply x:bg-stone-200 x:dark:bg-stone-800 x:px-4 x:py-8;
+
+  h3 {
+    @apply x:text-xl x:font-medium;
+  }
+
+  h4 {
+    @apply x:font-light;
+  }
+}
+
+p {
+  @apply x:my-6;
+}
+
+.x-tag {
+  @apply x:px-2.5 x:py-0.5 x:text-sm x:font-semibold x:rounded-md x:transition-colors;
+  @apply x:bg-stone-900 x:text-white;
+  @apply x:dark:bg-gray-50 x:dark:text-black;
+  @apply x:no-underline!;
+
+  &:hover {
+    @apply x:bg-stone-500;
+    @apply x:dark:bg-gray-200;
+  }
+}
+
+.x-global-footer {
+  @apply x:my-36;
+
+  .x-row {
+    @apply x:flex x:flex-col x:justify-between;
+    @apply x:sm:grid x:sm:grid-cols-3 x:sm:gap-8;
+  }
+  
+  h4 {
+    @apply x:text-lg x:font-medium x:my-0;
+  }
+
+  a {
+    @apply x:text-primary-700;
+  }
+  
+  p {
+    @apply x:my-0;
+  }
+
+  .x-author {
+    @apply x:font-medium;
+  }
+
+  .x-col1, .x-col2, .x-col3 {
+    @apply x:flex x:flex-col x:gap-3 x:my-4; 
+  }
+
+  .social-icons {
+    width: 1.4rem;
+    height: 1.4rem;
+  }
+}
+
+.social-icons {
+  @apply x:inline-block;
+}
+
+.x\:prose code {
+  &:before,
+  &:after {
+    @apply x:hidden;
+  }
+  .line {
+    @apply x:font-normal;
+  }
+}
+
+.x\:prose a svg {
+  @apply x:inline-block;
+}
+
+.x\:prose .nextra-callout p {
+  @apply x:m-0;
+}
+
+.x-tech-stack {
+  @apply x:flex x:flex-wrap x:gap-4;
+  @apply x:my-4;
+  @apply x:items-center;
+
+  a {
+    @apply x:rounded-lg x:bg-stone-200 x:dark:bg-stone-800 x:px-4 x:py-2;
+    @apply x:text-sm x:font-semibold;
+    @apply x:text-stone-900 x:dark:text-stone-100;
+    @apply x:transition-colors x:duration-200;
+    @apply x:flex x:items-center;
+    height: 60px;
+  }
+  a:hover {
+    @apply x:bg-stone-300 x:dark:bg-stone-700;
+  }
+}
