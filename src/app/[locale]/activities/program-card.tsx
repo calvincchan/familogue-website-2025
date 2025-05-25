@@ -1,10 +1,11 @@
+import { Database } from "@/types/database.types";
 import Image from "next/image";
 import Link from "next/link";
-import { Database } from "src/types/database.types";
 
 interface Props {
   post: Database['public']['Tables']['program']['Row'];
 }
+
 export const ProgramCard: React.FC<Props> = ({ post }) => {
   // const { route, title, frontMatter: { description, date, image } } = post;
   const { name, name_zh, description, price, banner, dates } = post;

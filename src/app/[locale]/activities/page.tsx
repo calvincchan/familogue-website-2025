@@ -1,29 +1,23 @@
-import { Metadata } from "next";
+import { generatedMetadataForPage } from "@/utils/generatedMetadataForPage";
+import { getLocale, getTranslations } from "next-intl/server";
 import { ProgramCard } from "./program-card";
 import { getPosts } from "./utils";
 
-export const metadata: Metadata = {
-  title: "Classes & Events",
-  description: "Classes and events for parents and children.",
-  openGraph: {
-    title: "Classes & Events",
-    description: "Classes and events for parents and children.",
-    url: process.env.SITE_URL + "/activities",
-  },
-  alternates: {
-    canonical: process.env.SITE_URL + "/activities",
-  },
-};
+export async function generateMetadata() {
+  const locale = await getLocale();
+  return generatedMetadataForPage(locale, "Activities", "activities");
+}
 
 export default async function Page() {
   const posts = await getPosts();
   console.log("posts", posts);
+  const t = await getTranslations("Activities");
 
   return (
     <div>
       <header className="x-page-header">
-        <h1>{metadata.title as string}</h1>
-        <h2>{metadata.description as string}</h2>
+        <h1>{t("title")}</h1>
+        <h2>{t("meta.description")}</h2>
       </header>
 
       <section role="feed" className="x-post-list">

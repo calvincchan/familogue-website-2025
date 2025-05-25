@@ -1,5 +1,5 @@
 import RSS from "rss";
-import { getPosts } from "../activities/utils";
+import { getPosts } from "../[locale]/activities/utils";
 
 const normalizeUrl = (url: string): string => {
   const baseUrl = process.env.SITE_URL;

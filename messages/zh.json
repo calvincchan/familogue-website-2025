@@ -19,7 +19,8 @@
     "language": "語言",
     "telephone": "電話",
     "email": "電子郵件",
-    "address": "地址"
+    "address": "地址",
+    "activities": "近期活動"
   },
   "Footer": {
     "description": "卑詩省註冊非牟利團體，創會成員包括一班來自香港的資深教育工作者，也是剛移民到加拿大溫哥華的媽媽。成員希望透過他們的專業，幫助家庭更有效地溝通，一起同行與成長。我們的使命是為新移民家庭提供支持和資源，幫助他們在新的環境中茁壯成長。"
@@ -37,6 +38,12 @@
     "title": "關於我們",
     "meta": {
       "description": "(about us)"
+    }
+  },
+  "Activities": {
+    "title": "近期活動",
+    "meta": {
+      "description": "為父母和孩子提供的課程和活動。"
     }
   }
 }
