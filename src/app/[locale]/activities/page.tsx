@@ -10,7 +10,6 @@ export async function generateMetadata() {
 
 export default async function Page() {
   const posts = await getPosts();
-  console.log("posts", posts);
   const t = await getTranslations("Activities");
 
   return (
