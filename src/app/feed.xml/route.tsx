@@ -1,5 +1,5 @@
+import { getPosts } from "@/app/[locale]/activities/utils";
 import RSS from "rss";
-import { getPosts } from "../[locale]/activities/utils";
 
 const normalizeUrl = (url: string): string => {
   const baseUrl = process.env.SITE_URL;
@@ -19,31 +19,35 @@ export async function GET() {
     image_url: process.env.SITE_OG_IMAGE,
   });
 
+  const date = new Date().toUTCString();
+
   allPosts.forEach((post) => {
-    const { title, date, description } = post.frontMatter;
-    const url = normalizeUrl(post.route);
-    const image = post.frontMatter.image ? normalizeUrl(post.frontMatter.image) : process.env.SITE_OG_IMAGE;
-    const author = post.frontMatter.author || process.env.SITE_NAME;
-    const categories = post.frontMatter.tags || [];
-    const pubDate = post.frontMatter.lastmod ?
-      new Date(post.frontMatter.lastmod).toUTCString() :
-      post.frontMatter.date ?
-        new Date(post.frontMatter.date).toUTCString() :
-        new Date(date).toUTCString();
-    const guid = post.route;
+    const { name, name_zh, description, description_zh, sku } = post;
+    const url = normalizeUrl(`/activities/sku`);
+    const locale = "zh";
+    // const image = post.frontMatter.image ? normalizeUrl(post.frontMatter.image) : process.env.SITE_OG_IMAGE;
+    // const author = post.frontMatter.author || process.env.SITE_NAME;
+    // const categories = post.frontMatter.tags || [];
+    // const pubDate = post.frontMatter.lastmod ?
+    //   new Date(post.frontMatter.lastmod).toUTCString() :
+    //   post.frontMatter.date ?
+    //     new Date(post.frontMatter.date).toUTCString() :
+    //     new Date(date).toUTCString();
+    const guid = url;
     feed.item({
-      title,
-      description,
+      title: locale === "zh" ? name_zh : name,
+      description: locale === "zh" ? description_zh : description,
       url,
       guid,
-      author,
-      date: pubDate,
-      categories,
-      custom_elements: [
-        { "media:content": { _attr: { url: image } } },
-        { "media:thumbnail": { _attr: { url: image } } },
-        { "media:description": description },
-      ],
+      date,
+      // author,
+      // date: pubDate,
+      // categories,
+      // custom_elements: [
+      //   { "media:content": { _attr: { url: image } } },
+      //   { "media:thumbnail": { _attr: { url: image } } },
+      //   { "media:description": description },
+      // ],
     });
   });
 
