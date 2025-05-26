@@ -8,7 +8,6 @@ export const Navbar: FC<{ lang: 'en' | 'zh'; }> = async ({ lang }) => {
   const t = await getTranslations('Navigation');
 
   const topLevelNavbarItems: { title: string, route: string, cta?: boolean; }[] = [
-    { title: t('activities'), route: '/activities' },
     { title: t('news'), route: '/news' },
     { title: t('services'), route: '/our-services' },
     { title: t('support-us'), route: '/support-us' },
