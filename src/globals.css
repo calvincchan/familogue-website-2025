@@ -8,6 +8,20 @@
 @import "../node_modules/nextra/styles/cards.css";
 @import "../node_modules/nextra/styles/react-medium-image-zoom.css";
 
+/* Animation definitions */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.x-animate-slow-spin {
+  animation: spin 60s linear infinite;
+}
+
 .x-container {
   @apply x:max-w-5xl x:mx-auto x:px-4 x:py-10;
 }

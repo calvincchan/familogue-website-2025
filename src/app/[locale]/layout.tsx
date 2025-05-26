@@ -11,6 +11,7 @@ import { Geist } from 'next/font/google';
 // import type { PageMapItem } from 'nextra';
 import { Head } from 'nextra/components';
 import 'src/globals.css';
+import { Decorations } from "./_components/decorations";
 import { Footer } from './_components/footer';
 import { Navbar } from './_components/navbar';
 
@@ -45,6 +46,7 @@ const RootLayout: FC<{ children: ReactNode; params: Promise<{ locale: 'en' | 'zh
             <Footer />
           </div>
         </NextIntlClientProvider>
+        <Decorations />
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
     </html>
