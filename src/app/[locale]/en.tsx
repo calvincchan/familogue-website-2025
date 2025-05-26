@@ -1,34 +1,4 @@
-import { Metadata } from "next";
 import Link from "next/link";
-
-export const metadata: Metadata = {
-  title: 'Familogue | Parent-Child Education in Cantonese',
-  description: process.env.SITE_DESCRIPTION,
-  openGraph: {
-    title: process.env.SITE_NAME,
-    description: process.env.SITE_DESCRIPTION,
-    url: process.env.SITE_URL,
-    siteName: process.env.SITE_NAME,
-    type: 'website',
-    images: [
-      {
-        url: process.env.SITE_OG_IMAGE,
-        width: 640,
-        height: 640,
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary',
-    title: process.env.SITE_NAME,
-    description: process.env.SITE_DESCRIPTION,
-    images: process.env.SITE_OG_IMAGE,
-    creator: process.env.SITE_NAME,
-  },
-  alternates: {
-    canonical: process.env.SITE_URL,
-  },
-};
 
 export default function Page() {
   return (

@@ -1,5 +1,4 @@
 import { generatedMetadataForPage } from "@/utils/generatedMetadataForPage";
-import { Metadata } from "next";
 import { getLocale } from "next-intl/server";
 import Link from "next/link";
 
@@ -7,35 +6,6 @@ export async function generateMetadata() {
   const locale = await getLocale();
   return generatedMetadataForPage(locale, "Home", "/");
 }
-
-export const metadata: Metadata = {
-  title: 'Familogue 語你童行 | 母語親子教育，同行成長',
-  description: process.env.SITE_DESCRIPTION,
-  openGraph: {
-    title: process.env.SITE_NAME,
-    description: process.env.SITE_DESCRIPTION,
-    url: process.env.SITE_URL,
-    siteName: process.env.SITE_NAME,
-    type: 'website',
-    images: [
-      {
-        url: process.env.SITE_OG_IMAGE,
-        width: 640,
-        height: 640,
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary',
-    title: process.env.SITE_NAME,
-    description: process.env.SITE_DESCRIPTION,
-    images: process.env.SITE_OG_IMAGE,
-    creator: process.env.SITE_NAME,
-  },
-  alternates: {
-    canonical: process.env.SITE_URL,
-  },
-};
 
 export default function Page() {
   return (
