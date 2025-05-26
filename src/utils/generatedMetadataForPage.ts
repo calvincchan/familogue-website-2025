@@ -1,6 +1,20 @@
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 
+
+const defaultMeta: Metadata = {
+  authors: [
+    {
+      name: process.env.SITE_NAME,
+      url: process.env.SITE_URL,
+    }
+  ],
+  creator: process.env.SITE_NAME,
+  publisher: process.env.SITE_NAME,
+
+  metadataBase: new URL(process.env.SITE_URL),
+};
+
 export async function generatedMetadataForPage(locale: string, namespace: string, pathname: string) {
   const t = await getTranslations(namespace);
   const metadata: Metadata = {
@@ -29,5 +43,5 @@ export async function generatedMetadataForPage(locale: string, namespace: string
       }
     }
   };
-  return metadata;
+  return { ...defaultMeta, ...metadata };
 }

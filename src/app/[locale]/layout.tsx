@@ -6,7 +6,7 @@ import 'src/globals.css';
 import { routing } from 'src/i18n/routing';
 // import { Footer, Layout, Navbar, ThemeSwitch } from 'nextra-theme-blog'
 import { GoogleAnalytics } from '@next/third-parties/google';
-import { Metadata, Viewport } from 'next';
+import { Viewport } from 'next';
 import { Geist } from 'next/font/google';
 // import type { PageMapItem } from 'nextra';
 import { Head } from 'nextra/components';
@@ -16,22 +16,6 @@ import { Navbar } from './_components/navbar';
 
 export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'zh' }];
-}
-
-/* default metadata for the root layout */
-export async function generateMetadata() {
-  const meta: Metadata = {
-    authors: [
-      {
-        name: process.env.SITE_NAME,
-        url: process.env.SITE_URL,
-      }
-    ],
-    creator: process.env.SITE_NAME,
-    publisher: process.env.SITE_NAME,
-    metadataBase: new URL(process.env.SITE_URL),
-  };
-  return meta;
 }
 
 export const viewport: Viewport = {
