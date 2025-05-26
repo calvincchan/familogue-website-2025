@@ -1,5 +1,12 @@
+import { generatedMetadataForPage } from "@/utils/generatedMetadataForPage";
 import { Metadata } from "next";
+import { getLocale } from "next-intl/server";
 import Link from "next/link";
+
+export async function generateMetadata() {
+  const locale = await getLocale();
+  return generatedMetadataForPage(locale, "Home", "/");
+}
 
 export const metadata: Metadata = {
   title: 'Familogue 語你童行 | 母語親子教育，同行成長',

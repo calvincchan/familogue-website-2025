@@ -5,7 +5,7 @@ import { getPosts } from "./utils";
 
 export async function generateMetadata() {
   const locale = await getLocale();
-  return generatedMetadataForPage(locale, "Activities", "activities");
+  return generatedMetadataForPage(locale, "Activities", "/activities");
 }
 
 export default async function Page() {

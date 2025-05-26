@@ -6,7 +6,7 @@ import ChinesePage from "./zh";
 
 export async function generateMetadata() {
   const locale = await getLocale();
-  return generatedMetadataForPage(locale, "SupportUs", "support-us");
+  return generatedMetadataForPage(locale, "SupportUs", "/support-us");
 }
 
 export default async function Page() {
