@@ -62,7 +62,7 @@ const RootLayout: FC<{ children: ReactNode; params: Promise<{ locale: 'en' | 'zh
 
   return (
     <html lang={locale} className={mainFont.className}>
-      <Head color={{ hue: 359, saturation: 100, lightness: 62 }} backgroundColor={{ dark: "#0f172a", light: "#f6f5f5" }} />
+      <Head color={{ hue: 359, saturation: 100, lightness: 62 }} backgroundColor={{ dark: "#0f172a", light: "#fffbeb" }} />
       <body>
         <NextIntlClientProvider>
           <div role="container" className="x-container">

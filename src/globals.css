@@ -24,7 +24,7 @@
   }
 
   .x-main-link::before {
-    @apply x:inline-block x:mr-2 x:bg-stone-100 x:rounded-full;
+    @apply x:inline-block x:mr-2 x:bg-amber-200 x:rounded-full;
     content: url('/logo.svg');
     width: 80px;
     height: 80px;
