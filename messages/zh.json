@@ -20,7 +20,8 @@
     "telephone": "電話",
     "email": "電子郵件",
     "address": "地址",
-    "activities": "近期活動"
+    "activities": "近期活動",
+    "classes-and-events": "課程和活動"
   },
   "Footer": {
     "description": "卑詩省註冊非牟利團體，創會成員包括一班來自香港的資深教育工作者，也是剛移民到加拿大溫哥華的媽媽。成員希望透過他們的專業，幫助家庭更有效地溝通，一起同行與成長。我們的使命是為新移民家庭提供支持和資源，幫助他們在新的環境中茁壯成長。"
@@ -54,5 +55,16 @@
     "meta": {
       "description": "為父母和孩子提供的課程和活動。"
     }
+  },
+  "Programs": {
+    "meta": {
+      "description": "我們提供廣東話中文教學班，課程使用香港中文大學「可持續知識轉移項目基金」支持下成立的非牟利機構：語橋社資 (slco.org.hk) 教案、青田教中心教材 (greenfieldhk.com) 及精選兒童繪本，以有趣及有系統的方法加強小童認字及理解基本句子結構的能力。"
+    },
+    "title": "課程",
+    "no_description": "沒有詳細內容。"
+  },
+  "General": {
+    "register_now": "立即報名",
+    "view_details": "查看詳情"
   }
 }

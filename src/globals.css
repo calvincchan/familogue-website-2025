@@ -45,7 +45,7 @@
   }
 
   .x-menu {
-    @apply x:flex x:flex-row x:list-none x:gap-4 x:m-0 x:items-center x:font-medium;
+    @apply x:flex x:flex-row x:flex-wrap x:list-none x:gap-4 x:m-0 x:items-center x:justify-center x:font-medium;
   }
 
   a {
@@ -155,18 +155,24 @@
   }
 }
 
-.x-project-list {
-  /* @apply x:flex x:flex-col x:sm:flex-row; */
-  @apply x:grid x:grid-cols-1 x:sm:grid-cols-2 x:gap-4;
+.x-program-list {
+  @apply x:flex x:flex-col x:gap-4;
 }
 
-.x-project-card {
-  @apply x:my-4;
-  @apply x:border x:rounded-xl x:overflow-clip x:border-stone-300;
+.x-program-card {
+  /* @apply x:my-4; */
+  @apply x:border x:rounded-xl x:overflow-clip x:border-stone-200 x:bg-white;
+  @apply x:grid x:grid-cols-1 x:sm:grid-cols-2;
+  /* @apply x:flex x:flex-col; */
 
-  .x-project-content {
-    @apply x:p-2;
+  .x-part2 {
+    @apply x:p-4;
+
+    h2 {
+      @apply x:text-2xl x:my-2;
+    }
   }
+
 
   h3 {
     @apply x:text-2xl x:font-medium;

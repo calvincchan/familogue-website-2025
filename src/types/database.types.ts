@@ -472,8 +472,6 @@ export type Database = {
       }
       program: {
         Row: {
-          banner: string
-          banner_zh: string | null
           capacity: number
           capped: boolean
           created_at: string
@@ -485,6 +483,9 @@ export type Database = {
           fee_zh: string | null
           hidden: boolean
           id: number
+          image: string
+          image_dimension: string
+          image_zh: string | null
           name: string
           name_zh: string | null
           price: number | null
@@ -494,8 +495,6 @@ export type Database = {
           zoho_item_id: string | null
         }
         Insert: {
-          banner?: string
-          banner_zh?: string | null
           capacity?: number
           capped?: boolean
           created_at?: string
@@ -507,6 +506,9 @@ export type Database = {
           fee_zh?: string | null
           hidden?: boolean
           id?: number
+          image?: string
+          image_dimension?: string
+          image_zh?: string | null
           name: string
           name_zh?: string | null
           price?: number | null
@@ -516,8 +518,6 @@ export type Database = {
           zoho_item_id?: string | null
         }
         Update: {
-          banner?: string
-          banner_zh?: string | null
           capacity?: number
           capped?: boolean
           created_at?: string
@@ -529,6 +529,9 @@ export type Database = {
           fee_zh?: string | null
           hidden?: boolean
           id?: number
+          image?: string
+          image_dimension?: string
+          image_zh?: string | null
           name?: string
           name_zh?: string | null
           price?: number | null

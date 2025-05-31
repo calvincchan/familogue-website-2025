@@ -1,6 +1,7 @@
 import { generatedMetadataForPage } from "@/utils/generatedMetadataForPage";
 import { getLocale } from "next-intl/server";
 import Link from "next/link";
+import ProgramList from "./program-list";
 
 export async function generateMetadata() {
   const locale = await getLocale();
@@ -16,8 +17,8 @@ export default function Page() {
       </section>
       <section>
         <h2>課程及活動</h2>
-        <p>(placeholder)</p>
-        <p><Link className="x-button" href="/activities">更多課程及活動 👉</Link></p>
+        <ProgramList />
+        <p><Link className="x-button" href="/programs">更多課程及活動 👉</Link></p>
       </section>
       <section>
         <h2>關於我們</h2>
