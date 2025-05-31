@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props) {
   };
 }
 
-export const Page: React.FC<Props> = async function ({ params }) {
+const Page: React.FC<Props> = async function ({ params }) {
   const { locale, program_id } = await params;
   const record = await getProgramById(program_id);
   if (!record) {
