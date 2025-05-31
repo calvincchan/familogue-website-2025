@@ -15,7 +15,7 @@ export default function Page() {
 
       <section>
         <h2>Interactive Chinese Literacy Class</h2>
-        <p>課程使用香港中文大學「可持續知識轉移項目基金」支持下成立的非牟利機構：語橋社資 <a href="https://www.slco.org.hk/tc" target="_blank" rel="noopener noreferrer">https://www.slco.org.hk/tc</a> 教案、青田教中心教材及兒童繪本，以有趣及有系統的方法加強小童認字及理解基本句子結構的能力。</p>
+        <p>課程使用香港中文大學「可持續知識轉移項目基金」支持下成立的非牟利機構：<a href="https://www.slco.org.hk/tc" target="_blank" rel="noopener noreferrer">語橋社資</a> 教案、<a href="https://www.greenfieldhk.com/" target="_blank" rel="noopener noreferrer">青田教育中心</a>教材及精選兒童繪本，以有趣及有系統的方法加強小童認字及理解基本句子結構的能力。</p>
         <Link href="/classes-and-events" className="x-button">課程及活動</Link>
       </section>
 
