@@ -1,4 +1,4 @@
-import { getPosts } from "@/app/[locale]/activities/utils";
+import { getLocaleDisplayInfo, getPrograms } from "@/app/[locale]/classes-and-events/utils";
 import RSS from "rss";
 
 const normalizeUrl = (url: string): string => {
@@ -10,7 +10,7 @@ const normalizeUrl = (url: string): string => {
 };
 
 export async function GET() {
-  const allPosts = await getPosts();
+  const allPosts = await getPrograms();
   const feed = new RSS({
     title: process.env.SITE_NAME,
     description: process.env.SITE_DESCRIPTION,
@@ -22,9 +22,9 @@ export async function GET() {
   const date = new Date().toUTCString();
 
   allPosts.forEach((post) => {
-    const { name, name_zh, description, description_zh, sku } = post;
-    const url = normalizeUrl(`/activities/sku`);
-    const locale = "zh";
+    const { id } = post;
+    const { displayDescription, displayName } = getLocaleDisplayInfo(post, "zh");
+    const url = normalizeUrl(`/classes-and-events/${id}`);
     // const image = post.frontMatter.image ? normalizeUrl(post.frontMatter.image) : process.env.SITE_OG_IMAGE;
     // const author = post.frontMatter.author || process.env.SITE_NAME;
     // const categories = post.frontMatter.tags || [];
@@ -35,8 +35,8 @@ export async function GET() {
     //     new Date(date).toUTCString();
     const guid = url;
     feed.item({
-      title: locale === "zh" ? name_zh : name,
-      description: locale === "zh" ? description_zh : description,
+      title: displayName,
+      description: displayDescription,
       url,
       guid,
       date,
