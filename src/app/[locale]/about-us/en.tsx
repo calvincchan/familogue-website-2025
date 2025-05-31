@@ -1,10 +1,22 @@
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export default function Page() {
   const t = useTranslations('AboutUs');
   return (
     <div className="x-container x:prose">
       <h1>{t("title")}</h1>
+      <section className="x:flex x:flex-col x:sm:flex-row x:items-center x:justify-center x:text-xl x:sm:gap-8">
+        <Image src="/familogue-icon.png" alt="Familogue Logo" width={200} height={200} />
+        <div className="x:flex x:flex-col x:gap-3">
+          <div><span className="x:text-amber-500">Family</span> + <span className="x:text-emerald-500">Dialogue</span></div>
+          <div><span>語</span> = <span>Language</span></div>
+          <div>
+            <span>你</span> = <span className="x:text-stone-400">Our team of experienced educators</span> and <span className="x:text-amber-500">parents</span> / <br />
+            <span className="x:text-amber-500">parents</span> and <span className="x:text-emerald-500">children</span></div>
+          <div><span>童行</span> = Embarking on a journey with <span className="x:text-amber-500">parents</span> and <span className="x:text-emerald-500">children</span></div>
+        </div>
+      </section>
       <section>
         <p>
           We are experienced educators and immigrant mothers from Hong Kong now based in Vancouver, Canada. We established "Familogue" in 2022 to help parents and children communicate more effectively by transferring mother tongue skills into other abilities such as written language, second/third languages, social and cognitive skills. Through workshops and seminars, we aim to be a bridge between parents and their children, enabling them to improve and learn together in a familiar context like home.
@@ -18,6 +30,13 @@ export default function Page() {
         <p>
           As you may have noticed, our logo has two bubble elements, one representing the big bubble of the parent - Mommy Lingo, and the other representing the child - Kiddo.
         </p>
+      </section>
+      <section className="x:flex x:flex-col x:sm:flex-row x:items-center x:justify-center x:text-2xl x:sm:gap-4">
+        <div className="x:text-right x:text-yellow-800">Mommy Lingo<br />(Parents)</div>
+        <div className="x:h-[200px] x:flex x:items-center x:overflow-hidden">
+          <Image src="/logo.svg" alt="Familogue Logo" width={300} height={300} />
+        </div>
+        <div className="x:text-amber-500">Kiddo (Children)</div>
       </section>
       <section>
         <h2>Founding Members</h2>
@@ -42,6 +61,6 @@ export default function Page() {
           Seasoned marketing professional with experience in branding, public relations, corporate communications, advertising, and business development, who has also received training from 故事爸媽 and volunteered as a teacher assistant in schools.
         </p>
       </section>
-    </div>
+    </div >
   );
 };

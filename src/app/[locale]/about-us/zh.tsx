@@ -1,10 +1,20 @@
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export default function Page() {
   const t = useTranslations('AboutUs');
   return (
     <div className="x-container x:prose">
       <h1>{t("title")}</h1>
+      <section className="x:flex x:flex-col x:sm:flex-row x:items-center x:justify-center x:text-xl x:sm:gap-8">
+        <Image src="/familogue-icon.png" alt="Familogue Logo" width={200} height={200} />
+        <div className="x:flex x:flex-col x:gap-3">
+          <div><span className="x:text-amber-500">Family</span> + <span className="x:text-emerald-500">Dialogue</span></div>
+          <div><span>語</span> = <span>語言</span></div>
+          <div><span>你</span> = <span className="x:text-stone-400">我們一班資深教育工作者</span>與<span className="x:text-amber-500">家長</span> / <span className="x:text-amber-500">家長</span>與<span className="x:text-emerald-500">孩子</span></div>
+          <div><span>童行</span> = <span className="x:text-stone-400">我們</span>與<span className="x:text-amber-500">家長</span>及<span className="x:text-emerald-500">孩子</span>結伴同行</div>
+        </div>
+      </section>
       <section>
         <p>
           我們是幾名來自香港的資深教育工作者，也是剛移民到加拿大溫哥華的媽媽。我們希望透過我們的專業，幫助家長和孩子在家可以更有系統地將他們的母語能力轉化成其他能力。在熟悉的語境下，家長與小朋友能更有效地溝通，一起同行與成長。故此我們於2022年成立了「語你童行Familogue」 - 卑詩省註冊非牟利團體。聯合國教科文組織指出，多元語言教育建基於母語，由於幼兒照顧及早期教育乃一生學習的基礎，該組織相信，以母語為本的教育必須及早展開。瑞典更發現，母語說得好，通用語言也發展得好。
@@ -21,6 +31,13 @@ export default function Page() {
         <p>
           我們創立的目標之一是透過我們的專業知識來 "empower the caregivers"，為家長加加力，令親子間的溝通更得心應手。因此，我們一群創會媽媽以自身的育兒經驗，創立了「語媽媽教室」，語媽媽小孩的年齡段從幼兒涵蓋到高中生。我們深知您所面臨的問題，因為我們也曾經歷過類似的挑戰。歡迎您與我們分享您所遭遇到的問題或有趣的經歷。我們將結合教學和教養經驗、學術研究和理論，盡力為您解答疑問。
         </p>
+      </section>
+      <section className="x:flex x:flex-col x:sm:flex-row x:items-center x:justify-center x:text-2xl x:sm:gap-4">
+        <div className="x:text-right x:text-yellow-800">語媽媽（家長）</div>
+        <div className="x:h-[200px] x:flex x:items-center x:overflow-hidden">
+          <Image src="/logo.svg" alt="Familogue Logo" width={300} height={300} />
+        </div>
+        <div className="x:text-amber-500">童童（孩子）</div>
       </section>
       <section>
         <h2>創會媽媽介紹</h2>
