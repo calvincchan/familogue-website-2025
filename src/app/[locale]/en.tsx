@@ -1,7 +1,6 @@
 import { generatedMetadataForPage } from "@/utils/generatedMetadataForPage";
 import { getLocale } from "next-intl/server";
 import Link from "next/link";
-import ProgramList from "./program-list";
 
 export async function generateMetadata() {
   const locale = await getLocale();
@@ -15,26 +14,26 @@ export default function Page() {
         <h1>Familogue 語你童行</h1>
         <h2>Empowering parents and children to communicate and grow together through their mother tongue</h2>
       </section>
-      <section>
+      {/* <section>
         <h2>Latest Events</h2>
         <ProgramList />
         <p><Link className="x-button" href="/programs">See All Events →</Link></p>
-      </section>
+      </section> */}
       <section>
         <h2>About Us</h2>
-        <p>(include statistics and counters)</p>
+        <h3>The parent-child relationship is like the child's wings, and the mother tongue is like the wind under the wings, allowing the child to fly higher and farther.</h3>
         <p>We are a group of experienced educators from Hong Kong and moms who just immigrated to Vancouver, Canada. We aim to use our expertise to help parents and children systematically develop other skills using their mother tongue abilities at home. In familiar contexts, parents and children can communicate more effectively, and grow together. Therefore, we established "Familogue" in 2022, a registered non-profit organization in British Columbia.</p>
-        <p><Link className="x-button" href="/about-us">Learn More 👉</Link></p>
+        <p><Link className="x-button" href="/about-us">Learn More About Us &rarr;</Link></p>
       </section>
-      <section>
+      {/* <section>
         <h2>Our Services</h2>
         <p>(placeholder)</p>
-        <p><Link className="x-button" href="/our-services">Learn More 👉</Link></p>
-      </section>
-      <section>
+        <p><Link className="x-button" href="/our-services">Learn More About Our Services &rarr;</Link></p>
+      </section> */}
+      {/* <section>
         <h2>Media Coverage</h2>
         <p>(placeholder)</p>
-      </section>
+      </section> */}
     </div >
   );
-}  
+}

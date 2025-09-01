@@ -1,10 +1,10 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "最新動態",
+  title: "資訊中心",
   description: "Familogue 語你童行的最新消息和活動更新",
   openGraph: {
-    title: "最新動態",
+    title: "資訊中心",
     description: "Familogue 語你童行的最新消息和活動更新",
     url: process.env.SITE_URL + "/news",
     siteName: "Familogue 語你童行",
@@ -22,8 +22,10 @@ export const metadata: Metadata = {
 export default async function Page() {
   return (
     <div className="x:prose">
-      <h1>最新動態</h1>
-      <h2>敬請期待！</h2>
+      <h1>資訊中心 News</h1>
+      <h2>敬請期待！ Available Soon!</h2>
+      <p>我們將很快為您帶來最新消息和活動更新。</p>
+      <p>We will bring you the latest news and event updates soon.</p>
     </div>
   );
 }

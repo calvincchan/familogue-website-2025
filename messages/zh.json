@@ -5,7 +5,7 @@
   },
   "Navigation": {
     "home": "首頁",
-    "news": "最新消息",
+    "news": "資訊中心",
     "services": "服務介紹",
     "support-us": "支持我們",
     "about-us": "關於我們",
@@ -18,7 +18,7 @@
     "settings": "設置",
     "language": "語言",
     "telephone": "電話",
-    "email": "電子郵件",
+    "email": "電郵",
     "address": "地址",
     "activities": "近期活動",
     "classes-and-events": "課程和活動"

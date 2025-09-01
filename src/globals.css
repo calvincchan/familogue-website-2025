@@ -19,7 +19,7 @@
 }
 
 .x-animate-slow-spin {
-  animation: spin 60s linear infinite;
+  animation: spin 40s linear infinite;
 }
 
 .x-container {
@@ -247,7 +247,7 @@ p {
     @apply x:flex x:flex-col x:justify-between;
     @apply x:sm:grid x:sm:grid-cols-3 x:sm:gap-8;
   }
-  
+
   h4 {
     @apply x:text-lg x:font-medium x:my-0;
   }
@@ -255,7 +255,7 @@ p {
   a {
     @apply x:text-primary-700;
   }
-  
+
   p {
     @apply x:my-0;
   }
@@ -265,7 +265,7 @@ p {
   }
 
   .x-col1, .x-col2, .x-col3 {
-    @apply x:flex x:flex-col x:gap-3 x:my-4; 
+    @apply x:flex x:flex-col x:gap-3 x:my-4;
   }
 
   .social-icons {

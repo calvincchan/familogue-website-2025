@@ -11,12 +11,12 @@ export const Footer: FC = async () => {
   const tNav = await getTranslations('Navigation');
   const footerItems: { title: string, route: string, cta?: boolean; }[] = [
     { title: tNav('home'), route: '/' },
-    { title: tNav('classes-and-events'), route: '/classes-and-events' },
     { title: tNav('news'), route: '/news' },
     { title: tNav('services'), route: '/our-services' },
+    // { title: tNav('classes-and-events'), route: '/classes-and-events' },
     { title: tNav('support-us'), route: '/support-us' },
     { title: tNav('about-us'), route: '/about-us' },
-    { title: tNav('member'), route: '/member' },
+    // { title: tNav('member'), route: '/member' },
   ];
 
   const tFooter = await getTranslations('Footer');

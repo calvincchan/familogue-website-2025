@@ -9,7 +9,7 @@ export async function getPrograms() {
     .select('*')
     // .neq('hidden', true)
     .lte('visible_from', today)
-    // .gte('visible_to', today)
+    .gte('visible_to', today)
     .order('visible_from', { ascending: true });
   if (error) throw new Error(`Error fetching posts: ${error.message}`);
   return data;
