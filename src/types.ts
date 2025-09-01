@@ -10,3 +10,8 @@ export type BlogMetadata = {
   title?: string;
   image?: string;
 };
+
+export type ServiceRecord = {
+  title: string;
+  content: string;
+};

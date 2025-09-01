@@ -1,4 +1,5 @@
 import { generatedMetadataForPage } from "@/utils/generatedMetadataForPage";
+import { getServices } from "@/utils/sdk/services";
 import { getLocale } from "next-intl/server";
 import Link from "next/link";
 
@@ -7,7 +8,9 @@ export async function generateMetadata() {
   return generatedMetadataForPage(locale, "Home", "/");
 }
 
-export default function Page() {
+export default async function Page() {
+  const locale = await getLocale();
+  const records = await getServices(locale);
   return (
     <div className="x-top-page">
       <section className="x-hero">
@@ -25,11 +28,16 @@ export default function Page() {
         <p>We are a group of experienced educators from Hong Kong and moms who just immigrated to Vancouver, Canada. We aim to use our expertise to help parents and children systematically develop other skills using their mother tongue abilities at home. In familiar contexts, parents and children can communicate more effectively, and grow together. Therefore, we established "Familogue" in 2022, a registered non-profit organization in British Columbia.</p>
         <p><Link className="x-button" href="/about-us">Learn More About Us &rarr;</Link></p>
       </section>
-      {/* <section>
+      <section>
         <h2>Our Services</h2>
-        <p>(placeholder)</p>
-        <p><Link className="x-button" href="/our-services">Learn More About Our Services &rarr;</Link></p>
-      </section> */}
+        {records.map((record) => (
+          <div key={record.title}>
+            <h3>{record.title}</h3>
+            <p>{record.content}</p>
+            <p><Link className="x-button" href="/our-services">Learn More &rarr;</Link></p>
+          </div>
+        ))}
+      </section>
       {/* <section>
         <h2>Media Coverage</h2>
         <p>(placeholder)</p>

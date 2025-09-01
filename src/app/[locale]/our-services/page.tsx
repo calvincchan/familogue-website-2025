@@ -1,8 +1,6 @@
 import { generatedMetadataForPage } from "@/utils/generatedMetadataForPage";
-import { getLocale } from "next-intl/server";
-import { notFound } from "next/navigation";
-import EnglishPage from "./en";
-import ChinesePage from "./zh";
+import { getServices } from "@/utils/sdk/services";
+import { getLocale, getTranslations } from "next-intl/server";
 
 export async function generateMetadata() {
   const locale = await getLocale();
@@ -11,11 +9,17 @@ export async function generateMetadata() {
 
 export default async function Page() {
   const locale = await getLocale();
-  if (locale === 'en') {
-    return <EnglishPage />;
-  } else if (locale === 'zh') {
-    return <ChinesePage />;
-  } else {
-    notFound();
-  }
+  const records = await getServices(locale);
+  const t = await getTranslations('OurServices');
+  return (
+    <div className="x-container x:prose">
+      <h1>{t("title")} </h1>
+      {records.map((record) => (
+        <section key={record.title}>
+          <h2>{record.title}</h2>
+          <p>{record.content}</p>
+        </section>
+      ))}
+    </div>
+  );
 }
