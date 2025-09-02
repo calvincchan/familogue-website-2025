@@ -18,10 +18,10 @@ const defaultMeta: Metadata = {
 export async function generatedMetadataForPage(locale: string, namespace: string, pathname: string) {
   const t = await getTranslations(namespace);
   const metadata: Metadata = {
-    title: t("title"),
+    title: t("title") + " | " + process.env.SITE_NAME,
     description: t("meta.description"),
     openGraph: {
-      title: t("title"),
+      title: t("title") + " | " + process.env.SITE_NAME,
       description: t("meta.description"),
       url: pathname,
       siteName: process.env.SITE_NAME,
@@ -43,5 +43,6 @@ export async function generatedMetadataForPage(locale: string, namespace: string
       }
     }
   };
+  console.log({ ...defaultMeta, ...metadata });
   return { ...defaultMeta, ...metadata };
 }
