@@ -31,7 +31,7 @@ export default async function Page() {
         <p><Button asChild variant="accent" size="lg"><Link href="/about-us">{t("General.view_details")} &rarr;</Link></Button></p>
       </section>
       <section>
-        <h2>服務簡介</h2>
+        <h2>{t("OurServices.title")}</h2>
         <div className="mt-8 sm:grid sm:grid-cols-2 sm:gap-8">
           {records.map((record) => (
             <div key={record.title}>
