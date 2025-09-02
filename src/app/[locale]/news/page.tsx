@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: process.env.SITE_OG_IMAGE,
+        url: process.env.SITE_OG_IMAGE || "/og-image.png",
         width: 1200,
         height: 630,
       },
