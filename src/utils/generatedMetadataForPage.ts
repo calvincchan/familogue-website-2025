@@ -44,6 +44,5 @@ export async function generatedMetadataForPage(locale: string, namespace: string
       }
     }
   };
-  console.log({ ...defaultMeta, ...metadata });
   return { ...defaultMeta, ...metadata };
 }
