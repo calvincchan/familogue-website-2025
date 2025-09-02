@@ -6,8 +6,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
-  console.log(req.headers);
-  console.log(req.body);
+  console.log({ header: req.headers });
+  console.log({ body: req.body });
   // Verify request signature
   if (!verifySignature(req.body, req.headers["x-airtable-content-mac"] as string || "")) {
     return res.status(401).json({ error: "Unauthorized" });
