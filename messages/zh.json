@@ -68,5 +68,12 @@
   "General": {
     "register_now": "立即報名",
     "view_details": "查看詳情"
+  },
+  "Donate": {
+    "title": "捐助與你童行",
+    "meta": {
+      "description": "(description)"
+    },
+    "donateButton": "前往捐款表格"
   }
 }

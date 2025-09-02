@@ -67,5 +67,12 @@
   "General": {
     "view_details": "View Details",
     "register_now": "Register Now"
+  },
+  "Donate": {
+    "title": "Donate",
+    "meta": {
+      "description": "(description)"
+    },
+    "donateButton": "Donate Now"
   }
 }
