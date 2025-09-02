@@ -1,14 +1,11 @@
-// import { Footer, Layout, Navbar, ThemeSwitch } from 'nextra-theme-blog'
-import { NextIntlClientProvider, hasLocale } from 'next-intl';
-import { notFound } from 'next/navigation';
-import { FC, ReactNode } from 'react';
-import { routing } from 'src/i18n/routing';
-// import { Footer, Layout, Navbar, ThemeSwitch } from 'nextra-theme-blog'
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Viewport } from 'next';
+import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { Geist } from 'next/font/google';
-// import type { PageMapItem } from 'nextra';
+import { notFound } from 'next/navigation';
+import { FC, ReactNode } from 'react';
 import 'src/globals.css';
+import { routing } from 'src/i18n/routing';
 import { Decorations } from "./_components/decorations";
 import { Footer } from './_components/footer';
 import { Navbar } from './_components/navbar';

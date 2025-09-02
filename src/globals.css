@@ -399,10 +399,6 @@ p {
   @apply inline-block;
 }
 
-.prose .nextra-callout p {
-  @apply m-0;
-}
-
 .x-tech-stack {
   @apply flex flex-wrap gap-4;
   @apply my-4;
