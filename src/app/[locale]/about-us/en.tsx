@@ -18,6 +18,7 @@ export default function Page() {
         </div>
       </section>
       <section>
+        <h2>Background</h2>
         <p>
           We are experienced educators and immigrant mothers from Hong Kong now based in Vancouver, Canada. We established "Familogue" in 2022 to help parents and children communicate more effectively by transferring mother tongue skills into other abilities such as written language, second/third languages, social and cognitive skills. Through workshops and seminars, we aim to be a bridge between parents and their children, enabling them to improve and learn together in a familiar context like home.
         </p>
@@ -27,6 +28,7 @@ export default function Page() {
         <p>
           Parents using their mother tongue to communicate with their children improves family communication, especially with grandparents who may not speak foreign languages. A University of Washington study found that the mother tongue must be applied in real-life situations to be effective. We are experienced educators and mothers who immigrated to an English-speaking country and hope to help parents and children develop their mother tongue ability to improve communication and growth together.
         </p>
+        <h2>Our Goal</h2>
         <p>
           As you may have noticed, our logo has two bubble elements, one representing the big bubble of the parent - Mommy Lingo, and the other representing the child - Kiddo.
         </p>
