@@ -32,14 +32,18 @@ export default async function Page() {
       </section>
       <section>
         <h2>服務簡介</h2>
-        {records.map((record) => (
-          <div key={record.title} className="mt-8">
-            <h3>{record.title}</h3>
-            <p>{record.content}</p>
-            <p><Button asChild variant="outline" size="sm"><Link href="/our-services">了解更多 &rarr;</Link></Button></p>
-          </div>
-        ))}
+        <div className="mt-8 sm:grid sm:grid-cols-2 sm:gap-8">
+          {records.map((record) => (
+            <div key={record.title}>
+              <div className="sm:col-span-1">
+                <h3>{record.title}</h3>
+                <p>{record.content}</p>
+                <p><Button asChild variant="outline" size="sm"><Link href="/our-services">了解更多 &rarr;</Link></Button></p>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
-    </div >
+    </div>
   );
 }
