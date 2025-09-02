@@ -5,6 +5,8 @@ export async function getAllServices(locale: string) {
   const records = await airtableClient.scan<Service>(servicesTable, { filterByFormula: `{status} = 'Published'` });
   return records.sort((a, b) => (a.sortKey || 0) - (b.sortKey || 0)).map(record => ({
     title: locale === "zh" ? record.title : record.titleEnglish,
-    content: locale === "zh" ? record.content : record.contentEnglish
+    content: locale === "zh" ? record.content : record.contentEnglish,
+    slug: record.slug,
+    image: record.image || [],
   }));
 };

@@ -12,6 +12,7 @@ export interface Service extends Item {
   sortKey: number | null, // Original field: "Sort Key"
   assignee: string | null, // Original field: "Assignee"
   status: string | null, // Original field: "Status"
+  image: string[], // Original field: "Image"
 }
 
 export const servicesTable: Table<Service> = {
@@ -27,6 +28,7 @@ export const servicesTable: Table<Service> = {
     sortKey: 'fldoIwqliPidkxf7e', // Original field: "Sort Key"
     assignee: 'fldTa2l4OugZgn8Cv', // Original field: "Assignee"
     status: 'fldP6fYXNGbA0MwLM', // Original field: "Status"
+    image: 'fldpYgdovRN7zimor', // Original field: "Image"
   },
   schema: {
     slug: 'string | null',
@@ -37,5 +39,6 @@ export const servicesTable: Table<Service> = {
     sortKey: 'number | null',
     assignee: 'string | null',
     status: 'string | null',
+    image: 'string[] | null',
   },
 };

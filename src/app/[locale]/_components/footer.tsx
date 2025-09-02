@@ -26,7 +26,7 @@ export const Footer: FC = async () => {
       <div className="x-row">
         <div className="x-col1">
           <h4>Familogue 語你童行</h4>
-          <p>{tFooter('description')}</p>
+          <p className="text-muted-foreground">{tFooter('description')}</p>
           <p></p>
         </div>
         <div className="x-col2">
@@ -54,7 +54,7 @@ export const Footer: FC = async () => {
           <p>{tNav('address')}: <Link href="https://maps.app.goo.gl/wopnafQpovYgxuBH6" target="_blank" rel="noopener noreferrer">8181 Cambie Rd. Unit 5530, Richmond, BC V6X 1J8</Link></p>
         </div>
       </div>
-      <div className="text-center mt-8">
+      <div className="text-center mt-8 text-muted-foreground">
         <span className="x-author">{new Date().getFullYear()} © {process.env.SITE_NAME}.</span>
         {' '}
         All rights reserved.
