@@ -56,7 +56,7 @@ const RootLayout: FC<{ children: ReactNode; params: Promise<{ locale: 'en' | 'zh
         </NextIntlClientProvider>
         <Decorations />
       </body>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID || ''} />
     </html>
 
   );
