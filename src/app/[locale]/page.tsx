@@ -39,11 +39,11 @@ export default async function Page() {
               <div className="flex items-start justify-center">
                 <Link href={`/our-services#${record.slug}`}>
                   <Image
-                    src={record.image && record.image.length > 0 ? record.image[0] : "/logo.svg"}
+                    src={record.image && record.image.length > 0 ? record.image[0] : "/images/og-image.png"}
                     alt={record.title || "Service Image"}
-                    width={360}
-                    height={240}
-                    className="aspect-[3/2] w-full object-cover"
+                    width={320}
+                    height={180}
+                    className="aspect-[16/9] w-full object-cover"
                   />
                 </Link>
               </div>
