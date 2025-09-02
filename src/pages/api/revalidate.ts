@@ -12,11 +12,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   //   return res.status(403).json({ error: "Forbidden" });
   // }
   try {
-    // Revalidate home page
-    await res.revalidate('/');
+    for (const locale of ['/en', '/zh']) {
+      // Revalidate home page
+      await res.revalidate(locale + '/');
 
-    // Revalidate our services page
-    await res.revalidate('/our-services');
+      // Revalidate our services page
+      await res.revalidate(locale + '/our-services');
+    }
 
     return res.json({ revalidated: true });
   } catch (err) {
