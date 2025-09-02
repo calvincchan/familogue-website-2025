@@ -1,11 +1,12 @@
+import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 
 export default function Page() {
-  const t = useTranslations('SupportUs');
+  const t = useTranslations('');
   return (
     <div className="x-container prose">
-      <h1>{t("title")} </h1>
+      <h1>{t("SupportUs.title")} </h1>
 
       <section>
         <h2>成為會員</h2>
@@ -20,13 +21,8 @@ export default function Page() {
 
       <section>
         <h2>捐助與你童行</h2>
-        <p>我們的非牟利組織依賴社區的支持來提供高質量的資源和服務。您的捐款將幫助我們：</p>
-        <ul>
-          <li>開發新的教學材料和資源</li>
-          <li>提供免費或低成本的工作坊和活動</li>
-          <li>支持我們的社區計劃和倡議</li>
-          <li>繼續推廣母語教育和雙語學習的理念</li>
-        </ul>
+        <p>我們的非牟利組織依賴社區的支持來提供高質量的資源和服務。</p>
+        <Button asChild className="not-prose" variant="accent" size="lg"><Link href="/donate">{t("General.view_details")}</Link></Button>
       </section>
 
       <section>

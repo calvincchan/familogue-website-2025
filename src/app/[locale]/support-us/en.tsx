@@ -1,11 +1,12 @@
-import { Link } from "@/i18n/navigation";
+import { Button } from "@/components/ui/button";
 import { useTranslations } from "next-intl";
+import Link from "next/link";
 
 export default function Page() {
-  const t = useTranslations('SupportUs');
+  const t = useTranslations();
   return (
     <div className="x-container prose">
-      <h1>{t("title")} </h1>
+      <h1>{t("SupportUs.title")} </h1>
 
       <section>
         <h2>Become a Member</h2>
@@ -31,14 +32,9 @@ export default function Page() {
       <section>
         <h2>Donate to Familogue</h2>
         <p>
-          Our non-profit organization relies on community support to provide high-quality resources and services. Your donation will help us:
+          Our non-profit organization relies on community support to provide high-quality resources and services.
         </p>
-        <ul>
-          <li>Develop new teaching materials and resources</li>
-          <li>Offer free or low-cost workshops and events</li>
-          <li>Support our community programs and initiatives</li>
-          <li>Continue promoting the concept of mother tongue education and bilingual learning</li>
-        </ul>
+        <Button asChild className="not-prose" variant="accent" size="lg"><Link href="/donate">{t("General.view_details")}</Link></Button>
       </section>
 
       <section>

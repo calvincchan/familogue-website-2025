@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { generatedMetadataForPage } from "@/utils/generatedMetadataForPage";
+import { Heart } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Link from "next/link";
@@ -15,7 +16,7 @@ const DonationQrcode = () => (
 
 const DonationButton = ({ label }: { label: string; }) => (
   <Button asChild variant="accent" size="lg" className="not-prose p-10 text-lg mt-2">
-    <Link href="https://www.zeffy.com/en-CA/donation-form/please-donate-to-familogue-and-support-our-cause">{label} &rarr;</Link>
+    <Link href="https://www.zeffy.com/en-CA/donation-form/please-donate-to-familogue-and-support-our-cause">{label} <Heart /></Link>
   </Button >
 );
 
@@ -44,7 +45,7 @@ export default async function Page() {
             </div>
           </div>
           <h3>使用 Interac e-transfer 銀行轉賬</h3>
-          <p>請將款項轉至以下電子郵件地址： <code className="text-lg">donation@familogue.com</code></p>
+          <p>請將款項轉至以下電子郵件地址： <code className="text-lg">donation@familogue.ca</code></p>
           <h2>捐贈物資​</h2>
           <p>捐贈物資流程：</p>
           <ol>
@@ -79,7 +80,7 @@ export default async function Page() {
             </div>
           </div>
           <h3>Donate via Interac e-transfer</h3>
-          <p>Please send your donation to the following email address: <code className="text-lg">donation@familogue.com</code></p>
+          <p>Please send your donation to the following email address: <code className="text-lg">donation@familogue.ca</code></p>
           <h2>How to donate items</h2>
           <p>Donation process:</p>
           <ol>
