@@ -26,6 +26,7 @@ export default async function Page() {
   return (
     <div className="x-container prose">
       <h1>{t("Donate.title")}</h1>
+      <p>{t("Donate.description")}</p>
       {locale === "zh" && (
         <>
           <h2>捐款及捐贈物資</h2>
@@ -53,7 +54,7 @@ export default async function Page() {
             <li>語你童行團隊會回覆你，並確認是否能接收有關物資。</li>
             <li>如成功確認，我們會與你預約交收時間，請於約定時間將物品送到語你童行列治文中心（5530 列治文統一廣場）。</li>
           </ol>
-          <h2>捐贈物資指引</h2>
+          <h3>捐贈物資指引</h3>
           <p>注意事項：</p>
           <ol>
             <li>本會不接受二手衣物、鞋襪、傢俱等類別物品。</li>
@@ -88,7 +89,7 @@ export default async function Page() {
             <li>The Familogue team will reply to confirm whether we can accept the items.</li>
             <li>If accepted, we will schedule a drop-off time with you. Please bring the items to Familogue Richmond Centre (5530 Richmond Central Plaza) at the agreed time.</li>
           </ol>
-          <h2>Donation guidelines</h2>
+          <h3>Donation guidelines</h3>
           <p>Important notes:</p>
           <ol>
             <li>We do not accept second-hand clothing, shoes, socks, furniture, or similar items.</li>

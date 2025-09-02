@@ -41,7 +41,9 @@
     "title": "Support Us",
     "meta": {
       "description": "Various ways to support Familogue and its mission, including donations, volunteering, and spreading the word."
-    }
+    },
+    "subscribe": "Follow Us on Social Media",
+    "subscribe_description": "Please subscribe to our social media channels to stay updated on our latest news, events, and resources:"
   },
   "AboutUs": {
     "title": "About Us",
@@ -69,10 +71,21 @@
     "register_now": "Register Now"
   },
   "Donate": {
-    "title": "Donate",
+    "title": "Donate to Familogue",
     "meta": {
       "description": "(description)"
     },
-    "donateButton": "Donate Now"
+    "donateButton": "Donate Now",
+    "description": "Our non-profit organization relies on community support to provide high-quality resources and services. We appreciate any contributions to help us achieve our mission."
+  },
+  "Volunteer": {
+    "title": "Volunteer",
+    "subtitle": "Join Our Community",
+    "meta": {
+      "description": "Join our volunteer team and make a difference together."
+    },
+    "description": "At Familogue, we are dedicated to helping Chinese-speaking parents and children in the Greater Vancouver area build on their mother tongue at home and develop it into a foundation for other essential skills. To achieve this, we regularly host events and offer a variety of programs and services. Whether you're hoping to get more involved in the community, learn more about our mission, or contribute your talents, we warmly welcome you to join our volunteer team and make a difference together.",
+    "volunteerFormButton": "Volunteer Application Form",
+    "description_2": "Fill out our volunteer form — we’d love to get to know you!"
   }
 }
