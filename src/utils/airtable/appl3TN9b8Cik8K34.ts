@@ -12,7 +12,7 @@ export interface Service extends Item {
   sortKey: number | null, // Original field: "Sort Key"
   assignee: string | null, // Original field: "Assignee"
   status: string | null, // Original field: "Status"
-  image: string[], // Original field: "Image"
+  image: string[] | null, // Original field: "Image"
 }
 
 export const servicesTable: Table<Service> = {
