@@ -1,5 +1,5 @@
 import { generatedMetadataForPage } from "@/utils/generatedMetadataForPage";
-import { getServices } from "@/utils/sdk/services";
+import { getAllServices } from "@/utils/sdk/services";
 import { getLocale } from "next-intl/server";
 import Link from "next/link";
 
@@ -10,7 +10,7 @@ export async function generateMetadata() {
 
 export default async function Page() {
   const locale = await getLocale();
-  const records = await getServices(locale);
+  const records = await getAllServices(locale);
   return (
     <div className="x-top-page">
       <section className="x-hero">

@@ -10,3 +10,4 @@ supabase/.temp/postgres-version
 supabase/.temp/project-ref
 supabase/.temp/rest-version
 supabase/.temp/storage-version
+.vercel

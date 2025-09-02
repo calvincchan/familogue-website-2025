@@ -1,5 +1,5 @@
 import { generatedMetadataForPage } from "@/utils/generatedMetadataForPage";
-import { getServices } from "@/utils/sdk/services";
+import { getAllServices } from "@/utils/sdk/services";
 import { getLocale, getTranslations } from "next-intl/server";
 
 export async function generateMetadata() {
@@ -9,7 +9,7 @@ export async function generateMetadata() {
 
 export default async function Page() {
   const locale = await getLocale();
-  const records = await getServices(locale);
+  const records = await getAllServices(locale);
   const t = await getTranslations('OurServices');
   return (
     <div className="x-container x:prose">
