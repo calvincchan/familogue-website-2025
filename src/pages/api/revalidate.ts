@@ -9,7 +9,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   console.log({ header: req.headers });
   console.log({ body: req.body });
   // Verify request signature
-  if (!verifySignature(req.body, req.headers["x-airtable-content-mac"] as string || "")) {
+  if (!await verifySignature(req, req.headers["x-airtable-content-mac"] as string || "")) {
     return res.status(401).json({ error: "Unauthorized" });
   }
 
