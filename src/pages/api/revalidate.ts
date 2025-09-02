@@ -1,3 +1,4 @@
+import { verifySignature } from "@/utils/airtable/verify-signature";
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -5,9 +6,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   if (req.method !== 'POST') {
     return res.status(405).json({ error: 'Method Not Allowed' });
   }
-  // Validate request origin
-  const origin = req.headers.origin;
   console.log(req.headers);
+  console.log(req.body);
+  // Verify request signature
+  if (!verifySignature(req.body, req.headers["x-airtable-content-mac"] as string || "")) {
+    return res.status(401).json({ error: "Unauthorized" });
+  }
+
   // if (origin !== process.env.BACKEND_ORIGIN) {
   //   return res.status(403).json({ error: "Forbidden" });
   // }
