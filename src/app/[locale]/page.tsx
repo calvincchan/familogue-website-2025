@@ -1,8 +1,8 @@
+import { Button } from "@/components/ui/button";
 import { generatedMetadataForPage } from "@/utils/generatedMetadataForPage";
-import { getLocale } from "next-intl/server";
-import { notFound } from "next/navigation";
-import EnglishPage from './en';
-import ChinesePage from './zh';
+import { getAllServices } from "@/utils/sdk/services";
+import { getLocale, getTranslations } from "next-intl/server";
+import Link from "next/link";
 
 export async function generateMetadata() {
   const locale = await getLocale();
@@ -11,11 +11,35 @@ export async function generateMetadata() {
 
 export default async function Page() {
   const locale = await getLocale();
-  if (locale === 'en') {
-    return <EnglishPage />;
-  } else if (locale === 'zh') {
-    return <ChinesePage />;
-  } else {
-    notFound();
-  }
-}  
+  const records = await getAllServices(locale);
+  const t = await getTranslations();
+  return (
+    <div className="x-top-page">
+      <section className="x-hero">
+        <h1>{t("Homepage.title")}</h1>
+        <h2>{t("Homepage.subtitle")}</h2>
+      </section>
+      {/* <section>
+        <h2>課程及活動</h2>
+        <ProgramList />
+        <p><Link className="x-button" href="/programs">更多課程及活動 &rarr;</Link></p>
+      </section> */}
+      <section>
+        <h2>{t("AboutUs.title")}</h2>
+        <h3>{t("AboutUs.subtitle")}</h3>
+        <p>{t("AboutUs.description")}</p>
+        <p><Button asChild variant="accent" size="lg"><Link href="/about-us">{t("General.view_details")} &rarr;</Link></Button></p>
+      </section>
+      <section>
+        <h2>服務簡介</h2>
+        {records.map((record) => (
+          <div key={record.title} className="mt-8">
+            <h3>{record.title}</h3>
+            <p>{record.content}</p>
+            <p><Button asChild variant="outline" size="sm"><Link href="/our-services">了解更多 &rarr;</Link></Button></p>
+          </div>
+        ))}
+      </section>
+    </div >
+  );
+}

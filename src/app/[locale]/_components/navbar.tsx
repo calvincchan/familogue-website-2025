@@ -1,5 +1,4 @@
 import { getTranslations } from "next-intl/server";
-import { Anchor } from 'nextra/components';
 import { type FC } from 'react';
 import { Link } from "src/i18n/navigation";
 import LocaleSwitcher from "./locale-switcher";
@@ -18,8 +17,9 @@ export const Navbar: FC<{ lang: 'en' | 'zh'; }> = async ({ lang }) => {
 
   return (
     <nav role="menu" className="x-top-nav">
-      <Anchor role="menuitem" href="/" className="x-main-link" rel="author">
-        Familogue 語你童行</Anchor>
+      <Link role="menuitem" href="/" className="x-main-link" rel="author">
+        Familogue 語你童行
+      </Link>
       <ul role="menu" className="x-menu">
         <li>
           <LocaleSwitcher />
@@ -28,7 +28,7 @@ export const Navbar: FC<{ lang: 'en' | 'zh'; }> = async ({ lang }) => {
           const route = item.route;
           return (
             <li key={route}>
-              <Link href={route} role="menuitem" className={item.cta ? 'x-button' : ''}>
+              <Link href={route}>
                 {item.title}
               </Link>
             </li>

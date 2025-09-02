@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 export default function Page() {
   const t = useTranslations('SupportUs');
   return (
-    <div className="x-container x:prose">
+    <div className="x-container prose">
       <h1>{t("title")} </h1>
 
       <section>

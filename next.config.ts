@@ -1,6 +1,5 @@
-import { NextConfig } from "next";
+import { type NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
-// import nextra from "nextra";
 
 /*
  * @type {import('next').NextConfig}
@@ -26,13 +25,6 @@ const nextConfig: NextConfig = {
     ],
   },
 };
-
-// const withNextra = nextra({
-//   // theme: "nextra-theme-blog",
-//   // themeConfig: "./theme.config.jsx",
-//   defaultShowCopyCode: true,
-//   readingTime: false,
-// });
 
 /* https://next-intl.dev/docs/getting-started/app-router/with-i18n-routing */
 const withNextIntl = createNextIntlPlugin();

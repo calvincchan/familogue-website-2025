@@ -14,7 +14,7 @@ export default function LocaleMenu() {
           key={key}
           locale={key}
           href="/news"
-          className="x:mx-4"
+          className="mx-4"
         >
           {label}
         </Link>

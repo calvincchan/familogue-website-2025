@@ -26,7 +26,7 @@ export const ProgramCard: React.FC<Props> = ({ post, locale }) => {
             alt={displayName}
             width={imageWidth}
             height={imageHeight}
-            className="x:bg-stone-700"
+            className="bg-stone-700"
           />
         ) : (
           <ImagePlaceholder label={displayName} />

@@ -4,17 +4,17 @@ import Image from "next/image";
 export default function Page() {
   const t = useTranslations('AboutUs');
   return (
-    <div className="x-container x:prose">
+    <div className="x-container prose">
       <h1>{t("title")}</h1>
-      <section className="x:flex x:flex-col x:sm:flex-row x:items-center x:justify-center x:text-xl x:sm:gap-8">
+      <section className="flex flex-col sm:flex-row items-center justify-center text-xl sm:gap-8">
         <Image src="/familogue-icon.png" alt="Familogue Logo" width={200} height={200} />
-        <div className="x:flex x:flex-col x:gap-3">
-          <div><span className="x:text-amber-500">Family</span> + <span className="x:text-emerald-500">Dialogue</span></div>
+        <div className="flex flex-col gap-3">
+          <div><span className="text-amber-500">Family</span> + <span className="text-emerald-500">Dialogue</span></div>
           <div><span>語</span> = <span>Language</span></div>
           <div>
-            <span>你</span> = <span className="x:text-stone-400">Our team of experienced educators</span> and <span className="x:text-amber-500">parents</span> / <br />
-            <span className="x:text-amber-500">parents</span> and <span className="x:text-emerald-500">children</span></div>
-          <div><span>童行</span> = Embarking on a journey with <span className="x:text-amber-500">parents</span> and <span className="x:text-emerald-500">children</span></div>
+            <span>你</span> = <span className="text-stone-400">Our team of experienced educators</span> and <span className="text-amber-500">parents</span> / <br />
+            <span className="text-amber-500">parents</span> and <span className="text-emerald-500">children</span></div>
+          <div><span>童行</span> = Embarking on a journey with <span className="text-amber-500">parents</span> and <span className="text-emerald-500">children</span></div>
         </div>
       </section>
       <section>
@@ -31,12 +31,12 @@ export default function Page() {
           As you may have noticed, our logo has two bubble elements, one representing the big bubble of the parent - Mommy Lingo, and the other representing the child - Kiddo.
         </p>
       </section>
-      <section className="x:flex x:flex-col x:sm:flex-row x:items-center x:justify-center x:text-2xl x:sm:gap-4">
-        <div className="x:text-right x:text-yellow-800">Mommy Lingo<br />(Parents)</div>
-        <div className="x:h-[200px] x:flex x:items-center x:overflow-hidden">
+      <section className="flex flex-col sm:flex-row items-center justify-center text-2xl sm:gap-4">
+        <div className="text-right text-yellow-800">Mommy Lingo<br />(Parents)</div>
+        <div className="h-[200px] flex items-center overflow-hidden">
           <Image src="/logo.svg" alt="Familogue Logo" width={300} height={300} />
         </div>
-        <div className="x:text-amber-500">Kiddo (Children)</div>
+        <div className="text-amber-500">Kiddo (Children)</div>
       </section>
       <section>
         <h2>Founding Members</h2>

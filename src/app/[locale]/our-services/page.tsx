@@ -12,7 +12,7 @@ export default async function Page() {
   const records = await getAllServices(locale);
   const t = await getTranslations('OurServices');
   return (
-    <div className="x-container x:prose">
+    <div className="x-container prose">
       <h1>{t("title")} </h1>
       {records.map((record) => (
         <section key={record.title}>

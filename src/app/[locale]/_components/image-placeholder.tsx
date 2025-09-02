@@ -4,10 +4,10 @@
 const ImagePlaceholder: React.FC<{ label?: string; }> = function ({ label }) {
   return (
     <div
-      className="x:bg-orange-700 x:w-full x:h-full x:flex x:items-center x:justify-center"
+      className="bg-orange-700 w-full h-full flex items-center justify-center"
     >
-      <div className="x:text-white x:text-center">
-        {label && <div className="x:font-bold x:text-2xl">{label}</div>}
+      <div className="text-white text-center">
+        {label && <div className="font-bold text-2xl">{label}</div>}
         <div>{process.env.SITE_NAME}</div>
       </div>
     </div>

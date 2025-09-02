@@ -33,9 +33,9 @@ const Page: React.FC<Props> = async function ({ params }) {
   const { hidden, visible_from, visible_to } = record;
   const t = await getTranslations();
   return (
-    <div className="x:sm:max-w-2xl x:mx-auto">
-      <section className="x:mb-8">
-        <h1 className="x:text-3xl x:sm:text-4xl x:mb-4">{displayName}</h1>
+    <div className="sm:max-w-2xl mx-auto">
+      <section className="mb-8">
+        <h1 className="text-3xl sm:text-4xl mb-4">{displayName}</h1>
         <Link href={registerLink} className="x-button">
           {t("General.register_now")} →
         </Link>
@@ -50,7 +50,7 @@ const Page: React.FC<Props> = async function ({ params }) {
           />
         </div>
       )}
-      <div className="x:prose x:m-auto x:p-4">
+      <div className="prose m-auto p-4">
         <Markdown>
           {displayDescription || t("no_description")}
         </Markdown>

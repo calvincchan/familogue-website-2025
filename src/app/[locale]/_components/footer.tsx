@@ -54,7 +54,7 @@ export const Footer: FC = async () => {
           <p>{tNav('address')}: <Link href="https://maps.app.goo.gl/wopnafQpovYgxuBH6" target="_blank" rel="noopener noreferrer">8181 Cambie Rd. Unit 5530, Richmond, BC V6X 1J8</Link></p>
         </div>
       </div>
-      <div className="x:text-center x:mt-8">
+      <div className="text-center mt-8">
         <span className="x-author">{new Date().getFullYear()} © {process.env.SITE_NAME}.</span>
         {' '}
         All rights reserved.

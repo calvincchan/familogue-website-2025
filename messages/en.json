@@ -1,7 +1,7 @@
 {
   "Homepage": {
-    "title": "Welcome to the Homepage",
-    "description": "This is the homepage of our application."
+    "title": "Familogue 語你童行",
+    "subtitle": "Empowering parents and children to communicate and grow together through their mother tongue"
   },
   "Navigation": {
     "home": "Home",
@@ -47,7 +47,9 @@
     "title": "About Us",
     "meta": {
       "description": "(about us)"
-    }
+    },
+    "subtitle": "The parent-child relationship is like the child's wings, and the mother tongue is like the wind under the wings, allowing the child to fly higher and farther.",
+    "description": "We are a group of experienced educators from Hong Kong and moms who just immigrated to Vancouver, Canada. We aim to use our expertise to help parents and children systematically develop other skills using their mother tongue abilities at home. In familiar contexts, parents and children can communicate more effectively, and grow together. Therefore, we established \"Familogue\" in 2022, a registered non-profit organization in British Columbia."
   },
   "Activities": {
     "title": "Activities",

@@ -2,14 +2,12 @@
 import { NextIntlClientProvider, hasLocale } from 'next-intl';
 import { notFound } from 'next/navigation';
 import { FC, ReactNode } from 'react';
-import 'src/globals.css';
 import { routing } from 'src/i18n/routing';
 // import { Footer, Layout, Navbar, ThemeSwitch } from 'nextra-theme-blog'
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Viewport } from 'next';
 import { Geist } from 'next/font/google';
 // import type { PageMapItem } from 'nextra';
-import { Head } from 'nextra/components';
 import 'src/globals.css';
 import { Decorations } from "./_components/decorations";
 import { Footer } from './_components/footer';
@@ -37,7 +35,20 @@ const RootLayout: FC<{ children: ReactNode; params: Promise<{ locale: 'en' | 'zh
 
   return (
     <html lang={locale} className={mainFont.className}>
-      <Head color={{ hue: 359, saturation: 100, lightness: 62 }} backgroundColor={{ dark: "#0f172a", light: "#fffbeb" }} />
+      {/* <Head color={{ hue: 359, saturation: 100, lightness: 62 }} backgroundColor={{ dark: "#0f172a", light: "#fffbeb" }} /> */}
+      <head style={{ backgroundColor: "#fffbeb" }}>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <style>
+          {`
+        html[data-theme="dark"] head {
+          background-color: #0f172a !important;
+        }
+        html[data-theme="light"] head {
+          background-color: #fffbeb !important;
+        }
+          `}
+        </style>
+      </head>
       <body>
         <NextIntlClientProvider>
           <div role="container" className="x-container">

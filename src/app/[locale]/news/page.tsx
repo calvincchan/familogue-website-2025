@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   return (
-    <div className="x:prose">
+    <div className="prose">
       <h1>資訊中心 News</h1>
       <h2>敬請期待！ Available Soon!</h2>
       <p>我們將很快為您帶來最新消息和活動更新。</p>
