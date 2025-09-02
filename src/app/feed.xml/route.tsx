@@ -1,4 +1,5 @@
 import { getLocaleDisplayInfo, getPrograms } from "@/app/[locale]/classes-and-events/utils";
+import { siteConfig } from "@/utils/site-config";
 import RSS from "rss";
 
 const normalizeUrl = (url: string): string => {
@@ -12,11 +13,11 @@ const normalizeUrl = (url: string): string => {
 export async function GET() {
   const allPosts = await getPrograms();
   const feed = new RSS({
-    title: process.env.SITE_NAME,
-    description: process.env.SITE_DESCRIPTION,
-    site_url: process.env.SITE_URL,
-    feed_url: `${process.env.SITE_URL}/feed.xml`,
-    image_url: process.env.SITE_OG_IMAGE,
+    title: siteConfig.name,
+    description: siteConfig.description,
+    site_url: siteConfig.baseUrl,
+    feed_url: `${siteConfig.baseUrl}/feed.xml`,
+    // image_url: siteConfig.ogImage,
   });
 
   const date = new Date().toUTCString();

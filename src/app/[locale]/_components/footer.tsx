@@ -1,3 +1,4 @@
+import { siteConfig } from "@/utils/site-config";
 import { getTranslations } from "next-intl/server";
 import type { FC } from 'react';
 import { FacebookIcon, InstagramIcon, YouTubeIcon } from "src/_icons";
@@ -25,7 +26,7 @@ export const Footer: FC = async () => {
     <footer className="x-global-footer">
       <div className="x-row">
         <div className="x-col1">
-          <h4>Familogue 語你童行</h4>
+          <h4>{siteConfig.name}</h4>
           <p className="text-muted-foreground">{tFooter('description')}</p>
           <p></p>
         </div>
@@ -55,7 +56,7 @@ export const Footer: FC = async () => {
         </div>
       </div>
       <div className="text-center mt-8 text-muted-foreground">
-        <span className="x-author">{new Date().getFullYear()} © {process.env.SITE_NAME}.</span>
+        <span className="x-author">{new Date().getFullYear()} © {siteConfig.name}.</span>
         {' '}
         All rights reserved.
       </div>

@@ -1,3 +1,5 @@
+import { siteConfig } from "@/utils/site-config";
+
 /**
  * Placeholder component for images
  */
@@ -8,7 +10,7 @@ const ImagePlaceholder: React.FC<{ label?: string; }> = function ({ label }) {
     >
       <div className="text-white text-center">
         {label && <div className="font-bold text-2xl">{label}</div>}
-        <div>{process.env.SITE_NAME}</div>
+        <div>{siteConfig.name}</div>
       </div>
     </div>
   );

@@ -1,37 +1,38 @@
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
+import { siteConfig } from "./site-config";
 
 
 const defaultMeta: Metadata = {
   authors: [
     {
-      name: process.env.SITE_NAME,
-      url: process.env.SITE_URL,
+      name: siteConfig.name,
+      url: siteConfig.baseUrl,
     }
   ],
-  creator: process.env.SITE_NAME,
-  publisher: process.env.SITE_NAME,
+  creator: siteConfig.name,
+  publisher: siteConfig.name,
 
-  metadataBase: new URL(process.env.SITE_URL),
+  metadataBase: new URL(siteConfig.baseUrl),
 };
 
 export async function generatedMetadataForPage(locale: string, namespace: string, pathname: string) {
   const t = await getTranslations(namespace);
   const metadata: Metadata = {
-    title: t("title") + " | " + process.env.SITE_NAME,
+    title: t("title") + " | " + siteConfig.name,
     description: t("meta.description"),
     openGraph: {
-      title: t("title") + " | " + process.env.SITE_NAME,
+      title: t("title") + " | " + siteConfig.name,
       description: t("meta.description"),
       url: pathname,
-      siteName: process.env.SITE_NAME,
+      siteName: siteConfig.name,
       type: "website",
       images: [
         {
           url: `/images/og-image.png`,
           width: 1600,
           height: 900,
-          alt: `${process.env.SITE_NAME} Open Graph Image`
+          alt: `${siteConfig.name} Open Graph Image`
         }
       ]
     },
