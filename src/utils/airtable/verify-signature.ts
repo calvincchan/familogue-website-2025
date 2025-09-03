@@ -12,13 +12,7 @@ export async function verifySignature(requestBody: NextApiRequest, signature: st
   const rawBody = await getRawBody(requestBody);
   hmac.update(rawBody, 'ascii');
   const expectedContentHmac = 'hmac-sha256=' + hmac.digest('hex');
-  console.log({
-    rawBody: rawBody,
-    expected: expectedContentHmac,
-    actual: signature,
-  });
-  // return expectedContentHmac === signature;
-  return true;
+  return expectedContentHmac === signature;
 }
 
 function getRawBody(req: NextApiRequest): Promise<string> {
