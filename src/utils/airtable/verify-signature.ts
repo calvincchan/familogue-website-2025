@@ -10,10 +10,6 @@ export async function verifySignature(requestBody: NextApiRequest, signature: st
   // example request body const requestBody = '{"base":{"id":"<the app id>"},"webhook": {"id":"<the webhook id>"},"timestamp":"<timestamp value"}' const hmac = require('crypto').createHmac('sha256', macSecretDecoded);
   const hmac = createHmac('sha256', macSecretDecoded);
   const rawBody = await getRawBody(requestBody);
-  if (!rawBody) {
-    console.error("Failed to get raw body from request");
-    return false;
-  }
   hmac.update(rawBody, 'ascii');
   const expectedContentHmac = 'hmac-sha256=' + hmac.digest('hex');
   console.log({

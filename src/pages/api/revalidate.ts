@@ -8,15 +8,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   }
   console.log({ header: req.headers });
   console.log({ body: req.body });
-  // Verify request signature
-  if (!await verifySignature(req, req.headers["x-airtable-content-mac"] as string || "")) {
-    return res.status(401).json({ error: "Unauthorized" });
-  }
-
-  // if (origin !== process.env.BACKEND_ORIGIN) {
-  //   return res.status(403).json({ error: "Forbidden" });
-  // }
   try {
+    // Verify request signature
+    if (!await verifySignature(req, req.headers["x-airtable-content-mac"] as string || "")) {
+      return res.status(401).json({ error: "Unauthorized" });
+    }
+
     for (const locale of ['/en', '/zh']) {
       // Revalidate home page
       await res.revalidate(locale + '/');
