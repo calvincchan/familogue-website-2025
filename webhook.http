@@ -3,6 +3,7 @@
 @API_KEY={{$dotenv AIRTABLE_API_KEY}}
 @WEBHOOK_URL={{BASE_URL}}/{{BASE_ID}}/webhooks
 @SERVICE_TABLE_ID=tblhFs46yyTpwURCT
+@WEBHOOK_ID={{$dotenv AIRTABLE_WEBHOOK_ID}}
 
 ### Insert
 POST {{WEBHOOK_URL}}
@@ -10,7 +11,7 @@ Authorization: Bearer {{API_KEY}}
 Content-Type: application/json
 
 {
-  "notificationUrl": "https://familogue.ca/api/revalidate",
+  "notificationUrl": "https://www.familogue.ca/api/revalidate",
   "specification": {
     "options": {
       "filters": {
@@ -28,13 +29,39 @@ GET {{WEBHOOK_URL}}
 Authorization: Bearer {{API_KEY}}
 Content-Type: application/json
 
+### Get
+GET {{WEBHOOK_URL}}/{{WEBHOOK_ID}}
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+### payloads
+GET {{WEBHOOK_URL}}/{{WEBHOOK_ID}}/payloads
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
+### Refresh
+POST {{WEBHOOK_URL}}/{{WEBHOOK_ID}}/refresh
+Authorization: Bearer {{API_KEY}}
+Content-Type: application/json
+
 ### Delete
-DELETE {{WEBHOOK_URL}}/achs7NtowxGAeXW56
+DELETE {{WEBHOOK_URL}}/{{WEBHOOK_ID}}
 Authorization: Bearer {{API_KEY}}
 Content-Type: application/json
 
 ### Test webhook
-POST https://familogue.ca/api/revalidate
+POST https://www.familogue.ca/api/revalidate
 
 ###
 POST http://localhost:3000/api/revalidate
+Content-Type: application/json
+
+{
+  "base": {
+    "id": "<the app id>"
+  },
+  "webhook": {
+    "id": "<the webhook id>"
+  },
+  "timestamp": "<timestamp value>"
+}
