@@ -13,19 +13,19 @@ export async function verifySignature(requestBody: NextApiRequest, signature: st
   hmac.update(rawBody, 'ascii');
   const expectedContentHmac = 'hmac-sha256=' + hmac.digest('hex');
   console.log({
-    actual: rawBody,
+    rawBody: rawBody,
     expected: expectedContentHmac,
+    actual: signature,
   });
   // return expectedContentHmac === signature;
   return true;
 }
 
-async function getRawBody(req: NextApiRequest) {
-  const rawBody = await new Promise<string>((resolve, reject) => {
+function getRawBody(req: NextApiRequest): Promise<string> {
+  return new Promise<string>((resolve, reject) => {
     let data = '';
     req.on('data', chunk => { data += chunk; });
     req.on('end', () => { resolve(data); });
     req.on('error', err => { reject(err); });
   });
-  return rawBody;
 }
