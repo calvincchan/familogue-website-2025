@@ -1,4 +1,5 @@
 import { verifySignature } from "@/utils/airtable/verify-signature";
+import { siteConfig } from "@/utils/site-config";
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export const config = {
@@ -18,7 +19,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       return res.status(401).json({ error: "Unauthorized" });
     }
 
-    for (const locale of ['/en', '/zh']) {
+    for (const locale of siteConfig.locales) {
       // Revalidate home page
       await res.revalidate(locale + '/');
 
