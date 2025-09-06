@@ -50,7 +50,7 @@ export default async function Page() {
           <h2>捐贈物資​</h2>
           <p>捐贈物資流程：</p>
           <ol>
-            <li>為你希望捐出的物品拍照，並連同物品簡介上載於填寫表格。</li>
+            <li>為你希望捐出的物品拍照，並連同物品簡介電郵到 <code className="text-lg">donation@familogue.ca</code>。</li>
             <li>語你童行團隊會回覆你，並確認是否能接收有關物資。</li>
             <li>如成功確認，我們會與你預約交收時間，請於約定時間將物品送到語你童行列治文中心（5530 列治文統一廣場）。</li>
           </ol>
@@ -85,7 +85,7 @@ export default async function Page() {
           <h2>How to donate items</h2>
           <p>Donation process:</p>
           <ol>
-            <li>Take photos of the items you wish to donate and upload them with a brief description using the form.</li>
+            <li>Take photos of the items you wish to donate and email them with a brief description to <code className="text-lg">donation@familogue.ca</code>.</li>
             <li>The Familogue team will reply to confirm whether we can accept the items.</li>
             <li>If accepted, we will schedule a drop-off time with you. Please bring the items to Familogue Richmond Centre (5530 Richmond Central Plaza) at the agreed time.</li>
           </ol>
