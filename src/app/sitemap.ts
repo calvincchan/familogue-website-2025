@@ -9,13 +9,14 @@ function generateLocalePage(path: string) {
   for (const locale of locales) {
     urls[locale] = `${baseUrl}/${locale}${path}`;
   }
-  return {
+  const result: MetadataRoute.Sitemap[number] = {
     url: `${baseUrl}${path}`,
     lastModified: new Date(),
     alternates: {
       languages: urls,
     },
   };
+  return result;
 }
 
 // Generate sitemap entries for each locale and page
