@@ -11,6 +11,6 @@ export async function getAllServices(locale: string) {
     title: locale === "zh" ? record.title : record.title_en,
     content: locale === "zh" ? record.content : record.content_en,
     slug: record.slug,
-    image: record.image || [],
+    image: record.image ? [record.image] : [],
   }));
 };
