@@ -7,6 +7,31 @@ export type Json =
   | Json[]
 
 export type Database = {
+  graphql_public: {
+    Tables: {
+      [_ in never]: never
+    }
+    Views: {
+      [_ in never]: never
+    }
+    Functions: {
+      graphql: {
+        Args: {
+          extensions?: Json
+          operationName?: string
+          query?: string
+          variables?: Json
+        }
+        Returns: Json
+      }
+    }
+    Enums: {
+      [_ in never]: never
+    }
+    CompositeTypes: {
+      [_ in never]: never
+    }
+  }
   public: {
     Tables: {
       adult_member: {
@@ -136,116 +161,6 @@ export type Database = {
           },
         ]
       }
-      Client_Information: {
-        Row: {
-          Additional_Information_Interested: string | null
-          Channels: string | null
-          Child_DOB: string | null
-          Child_First_Name: string | null
-          Child_Last_Name: string | null
-          Child_Photo_Consent: boolean
-          Chinese_Ability: string
-          Client_id: number
-          Contact_Number: number
-          Created_at: string
-          Emergency_Contact_Number: string | null
-          Emergency_Contact_Person: string | null
-          Food_Drug_Allergy: string | null
-          Is_Food_Drug_Allergy: boolean
-          Language_Preferred: string
-          Living_Location: string
-          Native_Cantonese: boolean
-          Newsletter: boolean
-          Parent_First_Name: string
-          Parent_Last_Name: string
-          Services_Used: string
-          zoho_client_id: string | null
-        }
-        Insert: {
-          Additional_Information_Interested?: string | null
-          Channels?: string | null
-          Child_DOB?: string | null
-          Child_First_Name?: string | null
-          Child_Last_Name?: string | null
-          Child_Photo_Consent: boolean
-          Chinese_Ability: string
-          Client_id?: number
-          Contact_Number: number
-          Created_at?: string
-          Emergency_Contact_Number?: string | null
-          Emergency_Contact_Person?: string | null
-          Food_Drug_Allergy?: string | null
-          Is_Food_Drug_Allergy: boolean
-          Language_Preferred: string
-          Living_Location: string
-          Native_Cantonese: boolean
-          Newsletter: boolean
-          Parent_First_Name: string
-          Parent_Last_Name: string
-          Services_Used?: string
-          zoho_client_id?: string | null
-        }
-        Update: {
-          Additional_Information_Interested?: string | null
-          Channels?: string | null
-          Child_DOB?: string | null
-          Child_First_Name?: string | null
-          Child_Last_Name?: string | null
-          Child_Photo_Consent?: boolean
-          Chinese_Ability?: string
-          Client_id?: number
-          Contact_Number?: number
-          Created_at?: string
-          Emergency_Contact_Number?: string | null
-          Emergency_Contact_Person?: string | null
-          Food_Drug_Allergy?: string | null
-          Is_Food_Drug_Allergy?: boolean
-          Language_Preferred?: string
-          Living_Location?: string
-          Native_Cantonese?: boolean
-          Newsletter?: boolean
-          Parent_First_Name?: string
-          Parent_Last_Name?: string
-          Services_Used?: string
-          zoho_client_id?: string | null
-        }
-        Relationships: [
-          {
-            foreignKeyName: "client_information_client_id_fkey"
-            columns: ["Client_id"]
-            isOneToOne: true
-            referencedRelation: "Client_Intake"
-            referencedColumns: ["Client_id"]
-          },
-        ]
-      }
-      Client_Intake: {
-        Row: {
-          Cleint_First_Name: string
-          Cleint_Last_Name: string
-          Client_id: number
-          Contact_Number: number
-          Created_at: string
-          Relationship_With_Child: string
-        }
-        Insert: {
-          Cleint_First_Name: string
-          Cleint_Last_Name: string
-          Client_id?: number
-          Contact_Number: number
-          Created_at?: string
-          Relationship_With_Child: string
-        }
-        Update: {
-          Cleint_First_Name?: string
-          Cleint_Last_Name?: string
-          Client_id?: number
-          Contact_Number?: number
-          Created_at?: string
-          Relationship_With_Child?: string
-        }
-        Relationships: []
-      }
       confirmation: {
         Row: {
           amount: number | null
@@ -325,6 +240,21 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      kv_items: {
+        Row: {
+          key: string
+          value: string
+        }
+        Insert: {
+          key: string
+          value: string
+        }
+        Update: {
+          key?: string
+          value?: string
+        }
+        Relationships: []
       }
       minor_member: {
         Row: {
@@ -673,7 +603,7 @@ export type Database = {
       }
       simplybook_invoice: {
         Row: {
-          amount: unknown | null
+          amount: unknown
           client_email: string | null
           client_id: number | null
           client_name: string | null
@@ -688,11 +618,11 @@ export type Database = {
           sbpay_invoice_id: string | null
           sbpay_reference_id: number | null
           status: string | null
-          tax_amount: unknown | null
+          tax_amount: unknown
           zoho_invoice_id: string | null
         }
         Insert: {
-          amount?: unknown | null
+          amount?: unknown
           client_email?: string | null
           client_id?: number | null
           client_name?: string | null
@@ -707,11 +637,11 @@ export type Database = {
           sbpay_invoice_id?: string | null
           sbpay_reference_id?: number | null
           status?: string | null
-          tax_amount?: unknown | null
+          tax_amount?: unknown
           zoho_invoice_id?: string | null
         }
         Update: {
-          amount?: unknown | null
+          amount?: unknown
           client_email?: string | null
           client_id?: number | null
           client_name?: string | null
@@ -726,7 +656,7 @@ export type Database = {
           sbpay_invoice_id?: string | null
           sbpay_reference_id?: number | null
           status?: string | null
-          tax_amount?: unknown | null
+          tax_amount?: unknown
           zoho_invoice_id?: string | null
         }
         Relationships: [
@@ -739,12 +669,83 @@ export type Database = {
           },
         ]
       }
+      simplybook_order: {
+        Row: {
+          amount: unknown
+          client_email: string | null
+          client_id: number | null
+          client_name: string | null
+          client_phone: string | null
+          created_at: string
+          date: string | null
+          description: string | null
+          due_date: string | null
+          id: number
+          order_no: string | null
+          rawdata: Json | null
+          sbpay_invoice_id: string | null
+          sbpay_reference_id: number | null
+          status: string | null
+          tax_amount: unknown
+          zoho_uploaded: boolean
+          zoho_uploaded_at: string | null
+        }
+        Insert: {
+          amount?: unknown
+          client_email?: string | null
+          client_id?: number | null
+          client_name?: string | null
+          client_phone?: string | null
+          created_at?: string
+          date?: string | null
+          description?: string | null
+          due_date?: string | null
+          id: number
+          order_no?: string | null
+          rawdata?: Json | null
+          sbpay_invoice_id?: string | null
+          sbpay_reference_id?: number | null
+          status?: string | null
+          tax_amount?: unknown
+          zoho_uploaded?: boolean
+          zoho_uploaded_at?: string | null
+        }
+        Update: {
+          amount?: unknown
+          client_email?: string | null
+          client_id?: number | null
+          client_name?: string | null
+          client_phone?: string | null
+          created_at?: string
+          date?: string | null
+          description?: string | null
+          due_date?: string | null
+          id?: number
+          order_no?: string | null
+          rawdata?: Json | null
+          sbpay_invoice_id?: string | null
+          sbpay_reference_id?: number | null
+          status?: string | null
+          tax_amount?: unknown
+          zoho_uploaded?: boolean
+          zoho_uploaded_at?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "simplybook_order_client_id_fkey"
+            columns: ["client_id"]
+            isOneToOne: false
+            referencedRelation: "simplybook_client"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       simplybook_service: {
         Row: {
           aliases: string[] | null
           created_at: string
           currency: string | null
-          deposit_price: unknown | null
+          deposit_price: unknown
           description: string | null
           id: number
           limit_booking: number | null
@@ -762,7 +763,7 @@ export type Database = {
           aliases?: string[] | null
           created_at?: string
           currency?: string | null
-          deposit_price?: unknown | null
+          deposit_price?: unknown
           description?: string | null
           id: number
           limit_booking?: number | null
@@ -780,7 +781,7 @@ export type Database = {
           aliases?: string[] | null
           created_at?: string
           currency?: string | null
-          deposit_price?: unknown | null
+          deposit_price?: unknown
           description?: string | null
           id?: number
           limit_booking?: number | null
@@ -862,10 +863,7 @@ export type Database = {
           email: string
           employee_no: string | null
           id: string
-          is_admin: boolean
-          is_super_admin: boolean
           last_sign_in_at: string | null
-          permissions: string[]
         }
         Insert: {
           access_level?: number
@@ -873,10 +871,7 @@ export type Database = {
           email?: string
           employee_no?: string | null
           id: string
-          is_admin?: boolean
-          is_super_admin?: boolean
           last_sign_in_at?: string | null
-          permissions?: string[]
         }
         Update: {
           access_level?: number
@@ -884,10 +879,46 @@ export type Database = {
           email?: string
           employee_no?: string | null
           id?: string
-          is_admin?: boolean
-          is_super_admin?: boolean
           last_sign_in_at?: string | null
-          permissions?: string[]
+        }
+        Relationships: []
+      }
+      web_posts: {
+        Row: {
+          content: string
+          content_en: string
+          created_at: string
+          id: number
+          image: string
+          position: number
+          slug: string
+          status: string
+          title: string
+          title_en: string
+        }
+        Insert: {
+          content?: string
+          content_en?: string
+          created_at?: string
+          id?: number
+          image?: string
+          position: number
+          slug: string
+          status?: string
+          title: string
+          title_en: string
+        }
+        Update: {
+          content?: string
+          content_en?: string
+          created_at?: string
+          id?: number
+          image?: string
+          position?: number
+          slug?: string
+          status?: string
+          title?: string
+          title_en?: string
         }
         Relationships: []
       }
@@ -910,26 +941,14 @@ export type Database = {
       }
     }
     Functions: {
-      custom_access_token_hook: {
-        Args: { _event: Json }
-        Returns: Json
-      }
-      get_family_id: {
-        Args: { adult_member_id: number }
-        Returns: number
-      }
+      custom_access_token_hook: { Args: { _event: Json }; Returns: Json }
+      get_access_level: { Args: never; Returns: number }
+      get_family_id: { Args: { adult_member_id: number }; Returns: number }
       get_user_display_name: {
         Args: { raw_user_meta_data: Json }
         Returns: string
       }
-      is_allowed: {
-        Args: { key: string }
-        Returns: boolean
-      }
-      is_level_allowed: {
-        Args: { p_access_level: number }
-        Returns: boolean
-      }
+      is_level_allowed: { Args: { p_access_level: number }; Returns: boolean }
     }
     Enums: {
       [_ in never]: never
@@ -940,21 +959,25 @@ export type Database = {
   }
 }
 
-type DefaultSchema = Database[Extract<keyof Database, "public">]
+type DatabaseWithoutInternals = Omit<Database, "__InternalSupabase">
+
+type DefaultSchema = DatabaseWithoutInternals[Extract<keyof Database, "public">]
 
 export type Tables<
   DefaultSchemaTableNameOrOptions extends
     | keyof (DefaultSchema["Tables"] & DefaultSchema["Views"])
-    | { schema: keyof Database },
+    | { schema: keyof DatabaseWithoutInternals },
   TableName extends DefaultSchemaTableNameOrOptions extends {
-    schema: keyof Database
+    schema: keyof DatabaseWithoutInternals
   }
-    ? keyof (Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
-        Database[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
+    ? keyof (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
+        DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])
     : never = never,
-> = DefaultSchemaTableNameOrOptions extends { schema: keyof Database }
-  ? (Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
-      Database[DefaultSchemaTableNameOrOptions["schema"]]["Views"])[TableName] extends {
+> = DefaultSchemaTableNameOrOptions extends {
+  schema: keyof DatabaseWithoutInternals
+}
+  ? (DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"] &
+      DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Views"])[TableName] extends {
       Row: infer R
     }
     ? R
@@ -972,14 +995,16 @@ export type Tables<
 export type TablesInsert<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
-    | { schema: keyof Database },
+    | { schema: keyof DatabaseWithoutInternals },
   TableName extends DefaultSchemaTableNameOrOptions extends {
-    schema: keyof Database
+    schema: keyof DatabaseWithoutInternals
   }
-    ? keyof Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
+    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
     : never = never,
-> = DefaultSchemaTableNameOrOptions extends { schema: keyof Database }
-  ? Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
+> = DefaultSchemaTableNameOrOptions extends {
+  schema: keyof DatabaseWithoutInternals
+}
+  ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
       Insert: infer I
     }
     ? I
@@ -995,14 +1020,16 @@ export type TablesInsert<
 export type TablesUpdate<
   DefaultSchemaTableNameOrOptions extends
     | keyof DefaultSchema["Tables"]
-    | { schema: keyof Database },
+    | { schema: keyof DatabaseWithoutInternals },
   TableName extends DefaultSchemaTableNameOrOptions extends {
-    schema: keyof Database
+    schema: keyof DatabaseWithoutInternals
   }
-    ? keyof Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
+    ? keyof DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"]
     : never = never,
-> = DefaultSchemaTableNameOrOptions extends { schema: keyof Database }
-  ? Database[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
+> = DefaultSchemaTableNameOrOptions extends {
+  schema: keyof DatabaseWithoutInternals
+}
+  ? DatabaseWithoutInternals[DefaultSchemaTableNameOrOptions["schema"]]["Tables"][TableName] extends {
       Update: infer U
     }
     ? U
@@ -1018,14 +1045,16 @@ export type TablesUpdate<
 export type Enums<
   DefaultSchemaEnumNameOrOptions extends
     | keyof DefaultSchema["Enums"]
-    | { schema: keyof Database },
+    | { schema: keyof DatabaseWithoutInternals },
   EnumName extends DefaultSchemaEnumNameOrOptions extends {
-    schema: keyof Database
+    schema: keyof DatabaseWithoutInternals
   }
-    ? keyof Database[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
+    ? keyof DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"]
     : never = never,
-> = DefaultSchemaEnumNameOrOptions extends { schema: keyof Database }
-  ? Database[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"][EnumName]
+> = DefaultSchemaEnumNameOrOptions extends {
+  schema: keyof DatabaseWithoutInternals
+}
+  ? DatabaseWithoutInternals[DefaultSchemaEnumNameOrOptions["schema"]]["Enums"][EnumName]
   : DefaultSchemaEnumNameOrOptions extends keyof DefaultSchema["Enums"]
     ? DefaultSchema["Enums"][DefaultSchemaEnumNameOrOptions]
     : never
@@ -1033,20 +1062,26 @@ export type Enums<
 export type CompositeTypes<
   PublicCompositeTypeNameOrOptions extends
     | keyof DefaultSchema["CompositeTypes"]
-    | { schema: keyof Database },
+    | { schema: keyof DatabaseWithoutInternals },
   CompositeTypeName extends PublicCompositeTypeNameOrOptions extends {
-    schema: keyof Database
+    schema: keyof DatabaseWithoutInternals
   }
-    ? keyof Database[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
+    ? keyof DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"]
     : never = never,
-> = PublicCompositeTypeNameOrOptions extends { schema: keyof Database }
-  ? Database[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"][CompositeTypeName]
+> = PublicCompositeTypeNameOrOptions extends {
+  schema: keyof DatabaseWithoutInternals
+}
+  ? DatabaseWithoutInternals[PublicCompositeTypeNameOrOptions["schema"]]["CompositeTypes"][CompositeTypeName]
   : PublicCompositeTypeNameOrOptions extends keyof DefaultSchema["CompositeTypes"]
     ? DefaultSchema["CompositeTypes"][PublicCompositeTypeNameOrOptions]
     : never
 
 export const Constants = {
+  graphql_public: {
+    Enums: {},
+  },
   public: {
     Enums: {},
   },
 } as const
+
